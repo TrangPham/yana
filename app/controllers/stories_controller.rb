@@ -1,10 +1,10 @@
 class StoriesController < ApplicationController
   def new
-    @entry = Entry.new(user: current_user)
+    @entry = Story.new
   end
 
   def create
-    entry = Entry.new(entry_params)
+    entry = Story.new(entry_params)
     entry.user = current_user
     if entry.save!
       render json: { id: entry.id }, status: :created
@@ -14,11 +14,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
+    @entry = Story.find(params[:id])
   end
 
   def update
-    entry = Entry.find(params[:id])
+    entry = Story.find(params[:id])
     if entry.update!(entry_params)
       render nothing: true, status: :ok
     else
@@ -27,14 +27,14 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    Entry.find(params[:id]).destory
+    Story.find(params[:id]).destory
   end
 
   private
 
-  def entry_params
-    entry = params.require(:entry)
-    entry.require(:content)
-    entry.permit(:tags, :title)
+  def story_params
+    story = params.require(:story)
+    story.require(:content)
+    story.permit(:tags, :title)
   end
 end
