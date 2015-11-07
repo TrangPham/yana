@@ -2,8 +2,14 @@
 
 source "common.sh"
 
+echo ""
 echo "(Re)create index ${NAME?} ..."
-exec "createIndex.sh"
+./createIndex.sh
 
+echo ""
 echo "Create participant mapping..."
-exec "participantMapping.sh"
+./participantMapping.sh
+
+echo "" 
+echo "Create participant mapping..."
+./entryMapping.sh
