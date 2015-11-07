@@ -1,5 +1,27 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'entries/new'
+
+  get 'entries/create'
+
+  get 'entries/edit'
+
+  get 'entries/destroy'
+
+  get 'registrations/new'
+
+  get 'registrations/create'
+
+  get 'registrations/destroy'
+
+  get 'registrations/edit'
+
+  get 'sessions/destroy'
+
+  get 'sessions/new'
+
+  get 'sessions/destory'
+
+  devise_for :users, path: "", :controllers => { sessions: "sessions", registrations: "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
