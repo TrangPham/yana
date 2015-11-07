@@ -9,7 +9,7 @@ class EntriesController < ApplicationController
     if entry.save!
       render json: { id: entry.id }, status: :created
     else
-      render json: { error: "Unable to save entry." }, status: :unprocessable_entity
+      render json: { error: 'Unable to save entry.' }, status: :unprocessable_entity
     end
   end
 
@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
     if entry.update!(entry_params)
       render nothing: true, status: :ok
     else
-      render json: { error: "Unable to update entry." }, status: :unprocessable_entity
+      render json: { error: 'Unable to update entry.' }, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +32,6 @@ class EntriesController < ApplicationController
 
   private
 
-  # Strong Parameters
   def entry_params
     entry = params.require(:entry)
     entry.require(:content)
