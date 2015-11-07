@@ -24,8 +24,17 @@ curl -XPOST ${SERVER?}/${NAME?}/entry/_mapping -d '{
             "store": "yes"
          },
          "tags": {
-            "type": "string",
-            "term_vector": "yes"
+            "type": "multi_field",
+            "fields": {
+               "tags": {
+                  "type": "string",
+                  "term_vector": "yes"
+               },
+               "raw": {
+                  "type": "string",
+                  "index": "not_analyzed"
+               }
+            }
          },
          "created_at": {
             "type": "date",

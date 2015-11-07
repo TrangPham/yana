@@ -37,7 +37,8 @@ curl -XPOST ${SERVER?}/${NAME?}/entry -d '{
 curl -XPOST ${SERVER?}/${NAME?}/entry -d '{
    "user_id": "U02",
    "entry_id": "U02_1",
-   "text": "The quick blue fox jumps over the lazy dog."
+   "text": "The quick blue fox jumps over the lazy dog.",
+   "tags": ["Toronto", "Ottawa"]
 }
 '
 

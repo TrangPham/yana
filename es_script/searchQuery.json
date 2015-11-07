@@ -1,0 +1,41 @@
+{
+   "query" : {
+     "bool": {
+       "should": [
+          {
+             "bool": {
+                "should": [
+                   {
+                       "term": {
+                           "tags.raw": "Ottawa"
+                       }
+                   },
+                   {
+                       "term": {
+                           "tags.raw": "Toronto"
+                       }
+                   }
+                ],
+               "minimum_number_should_match": 1
+            }
+         },
+         {
+             "bool": {
+                "should": [
+                   {
+                      "more_like_this": {
+                          "fields": ["bio"],
+                          "like": ["another", "index", "brown fox"],
+                          "stop_words": ["a", "the", "it", "that"],
+                          "min_term_freq": 1,
+                          "min_doc_freq": 1,
+                          "boost": 11
+                      }
+                   }
+                ]
+             }
+         }
+       ]
+     }
+   }
+}
