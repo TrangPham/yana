@@ -1,0 +1,68 @@
+{
+user_id: 1,
+date:1296864000000,
+text: 
+"During my going-away meeting with Gender Studies, the faculty gave me this
+journal. In it I’ll report my descent into the post-cerebral realm for which I
+am headed. No whimpering, no whining, no despair. Just the facts."
+
+}
+
+{
+user_id: 1
+title:
+date: 1299110400000
+text:
+"Saturday at the mall I performed the physical motions of shoplifting—walked
+out of Macy’s with a pair of pants over my arm. I only noticed when I was
+inside Dillard’s on the opposite side of the mall. I hurried back, ready to
+explain. There were no salespeople around, and no one noticed when I put them
+back."
+}
+
+{
+user_id: 1
+title:
+date: 1299542400000 
+text:
+"Saturday at the mall I performed the physical motions of shoplifting—walked
+out of Macy’s with a pair of pants over my arm. I only noticed when I was
+inside Dillard’s on the opposite side of the mall. I hurried back, ready to
+explain. There were no salespeople around, and no one noticed when I put them
+back."
+}
+
+{
+user_id: 2,
+date: 857779200,
+text: "My heart does not come to rest."
+}
+
+{user_id: 2,
+date: 858038400,
+text: "I have started thinking seriously again that I have for years wanted to
+write an uncomplicated book without big words or much learning. Would I be
+able to do that? I will try. The least is that I will have a book to my name.
+Most importantly, it will create an activity here in my retirement center
+where I spend most of my time alone. In any other private house I would have
+been alone too."
+}
+
+{
+user_id: 2,
+date: 858556800000,
+text: "In all my hobbies [painting, sketching, reading] I was well away when I
+became ill last year in early February; after my illness, however, I could not
+even write my name or write as I’m doing here now. What used to be everyday
+things had to come back gradually."
+}
+
+{
+user_id: 2,
+date: 858816000000,
+text: "The society in which we and our children find ourselves provides for the care of children from when they’re small, adults work the whole day, old people are rightfully taken care of in retirement and old-age homes. However, what about the wherewithal of which loneliness snips the wings? Or those like me, who “struggle to keep busy,” if one can even call that an activity? When I am not busy, I am lonely."
+}
+
+{
+user_id: 2,
+date: 
