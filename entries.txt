@@ -65,4 +65,20 @@ text: "The society in which we and our children find ourselves provides for the 
 
 {
 user_id: 2,
-date: 
+date: 858902400,
+text: "Life outside me has become too new and strange and fast. The time will
+come when I will be focused only on my bodily needs."
+}
+
+{user_id: 2,
+date: 859420800,
+text: "Radio without Borders had an open discussion today on the relationship between children and elderly parents. This topic has kept me busy (seriously) for the past year. I have come so far that I say not only the children have to become independent from the parents, but also the parents from the children.
+
+For me this process was accompanied by much quiet heartsoreness and emotion
+and I had to work very hard at it. I gave my emotion and heartsoreness over to
+the most holy in myself and to the Holy of Holies, since I feel I can love the
+children more when I am not mad with heartsoreness or distracted by emotion.
+To me love is openness in every direction, and in respect of my children this
+is only possible if I expect nothing from them and blame them for nothing—then
+they will come to me out of love."
+} 
