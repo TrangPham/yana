@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20151107170735) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birth_date"
-    t.string   "type"
+    t.string   "category"
     t.string   "gender"
     t.text     "bio"
     t.datetime "created_at",                          null: false
