@@ -27,7 +27,8 @@
                       "more_like_this": {
                           "fields": ["text"],
                           "like": ["another", "index", "brown fox"],
-                          "stop_words": ["a", "the", "it", "that"],
+                          "stop_words": ["the", "of", "and", "to", "a", "in", "that", "is", "was", "he",
+                             "she", "for", "it", "with", "as", "his", "her", "on", "be", "at", "by", "i"],
                           "min_term_freq": 1,
                           "min_doc_freq": 1,
                           "boost": 8
