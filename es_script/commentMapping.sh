@@ -5,12 +5,10 @@ curl -XPOST ${SERVER?}/${NAME?}/comment/_mapping -d '{
       "properties": {
          "entry_id": {
             "type": "string",
-            "store": "yes",
             "index": "not_analyzed"
          },
          "user_id": {
             "type": "string",
-            "store": "yes",
             "index": "not_analyzed"
          },
          "created_at": {

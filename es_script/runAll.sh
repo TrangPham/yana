@@ -6,9 +6,11 @@ echo ""
 echo "(Re)create index ${NAME?} ..."
 ./createIndex.sh
 
+
 echo ""
 echo "Create participant mapping..."
 ./participantMapping.sh
+
 
 echo ""
 echo "Create participant mapping..."
@@ -18,3 +20,10 @@ echo "Create participant mapping..."
 echo ""
 echo "Create comment mapping..."
 ./commentMapping.sh
+
+
+echo ""
+echo ""
+echo ""
+echo "Creating test data"
+./loadTestData.sh

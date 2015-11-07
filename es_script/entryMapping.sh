@@ -7,7 +7,10 @@ curl -XPOST ${SERVER?}/${NAME?}/entry/_mapping -d '{
       "properties": {
          "entry_id": {
             "type": "string",
-            "store": "yes",
+            "index": "not_analyzed"
+         },
+         "user_id": {
+            "type": "string",
             "index": "not_analyzed"
          },
          "title": {

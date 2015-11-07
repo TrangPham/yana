@@ -5,9 +5,9 @@ source "common.sh"
 curl -XPOST ${SERVER?}/${NAME?}/participant/_mapping -d '{
    "participant": {
       "properties": {
-         "id": {
+         "user_id": {
             "type": "string",
-            "store": "yes"
+            "index": "not_analyzed"
          },
          "first_name": {
             "type": "string",
