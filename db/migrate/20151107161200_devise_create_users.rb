@@ -39,7 +39,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :gender
       t.text :bio
 
-      t.timestamps null: false
+      t.integer :created_at, null: false 
+      t.integer :updated_at, null: false 
     end
 
     add_index :users, :email,                unique: true
