@@ -1,5 +1,18 @@
 <%= form_for @entry do |f| %>
-  <%= f.label :title %></br>
-  <%= f.text_field :title %>
-  <%= f.text_area :content , placeholder: 'Write your stories here'%>
+  <div id="title">
+    <%= f.text_field :title , placeholder: 'Make this cooler by writing a title' %>
+  </div>
+  <div id="content">
+    <%= f.text_area :content , placeholder: 'Write your stories here', class: 'wysihtml5 story-content'%>
+  </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
