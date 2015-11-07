@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap
 //= require flat-ui
+//= require bootstrap-wysihtml5
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
