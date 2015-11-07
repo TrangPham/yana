@@ -19,9 +19,13 @@ curl -XPOST ${SERVER?}/${NAME?}/entry/_mapping -d '{
             "store": "yes"
          },
          "text": {
-            "type" : "string",
+            "type": "string",
             "term_vector": "yes",
             "store": "yes"
+         },
+         "tags": {
+            "type": "string",
+            "term_vector": "yes"
          },
          "created_at": {
             "type": "date",
