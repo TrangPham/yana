@@ -10,6 +10,11 @@ echo ""
 echo "Create participant mapping..."
 ./participantMapping.sh
 
-echo "" 
+echo ""
 echo "Create participant mapping..."
 ./entryMapping.sh
+
+
+echo ""
+echo "Create comment mapping..."
+./commentMapping.sh
