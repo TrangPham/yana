@@ -66,7 +66,7 @@ client.create({
 ///////////////////////////////////////////////////////////////////////////////
 // Server
 ///////////////////////////////////////////////////////////////////////////////
-var file = new(static.Server)('../client');
+var file = new(static.Server)('./');
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -95,7 +95,7 @@ app.post('/api/dandelion', function(req, res) {
 });
 
 
-app.post('/api/alchemy/keywords', function(req, res) {
+app.post('/api/alchemy', function(req, res) {
   var name = req.body.name;
   var text = req.body.text;
 
@@ -106,6 +106,8 @@ app.post('/api/alchemy/keywords', function(req, res) {
   });
 });
 
+
+/*
 app.post('/api/alchemy', function(req, res) {
   var name = req.body.name;
   var text = req.body.text;
@@ -116,6 +118,7 @@ app.post('/api/alchemy', function(req, res) {
     res.json(alchemy.transformEntityResponse(JSON.parse(data)) );
   });
 });
+*/
 
 
 

@@ -23,10 +23,12 @@ There are two servers
 
 Tag server
 ```
-node tagServices/server.js
+cd yana/tagService
+node server.js
 ```
 
 Rails server
 ```
+cd yana
 rails s
 ```
