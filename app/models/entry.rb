@@ -6,9 +6,20 @@ class Entry < ActiveRecord::Base
 
   validate :authorize_user
 
+  before_create :set_created_at
+  before_update :set_updated_at
+
   private
 
   def authorize_user
-    errors.add(:user, "user unauthorized to change entry") if current_user != user
+    errors.add(:user, 'Unauthorized User') if current_user != user
+  end
+
+  def set_created_at
+    self.created_at = Time.now * 1000
+  end
+
+  def set_updated_at
+    self.updated_at = Time.now * 1000
   end
 end

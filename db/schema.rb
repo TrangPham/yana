@@ -11,29 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107170735) do
+ActiveRecord::Schema.define(version: 20151107195549) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "entry_id"
-    t.integer  "user_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "entry_id"
+    t.integer "user_id"
+    t.text    "content"
+    t.integer "created_at", null: false
+    t.integer "updated_at", null: false
   end
 
-  create_table "entries", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "tag_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "stories", force: :cascade do |t|
+    t.string  "title"
+    t.text    "content"
+    t.integer "user_id"
+    t.integer "tag_id"
+    t.integer "created_at", null: false
+    t.integer "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name"
+    t.integer "created_at", null: false
+    t.integer "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,17 +54,18 @@ ActiveRecord::Schema.define(version: 20151107170735) do
     t.string   "category"
     t.string   "gender"
     t.text     "bio"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "created_at",                          null: false
+    t.integer  "updated_at",                          null: false
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "v_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "v_count"
+    t.integer "created_at", null: false
+    t.integer "updated_at", null: false
   end
 
 end

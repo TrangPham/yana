@@ -1,25 +1,4 @@
 Rails.application.routes.draw do
-  get 'entries/new'
-
-  get 'entries/create'
-
-  get 'entries/edit'
-
-  get 'entries/destroy'
-
-  get 'registrations/new'
-
-  get 'registrations/create'
-
-  get 'registrations/destroy'
-
-  get 'registrations/edit'
-
-  get 'sessions/destroy'
-
-  get 'sessions/new'
-
-  get 'sessions/destory'
 
   devise_for :users, path: "", :controllers => { sessions: "sessions", registrations: "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
@@ -36,8 +15,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  resources :story
+  root 'pages#home'
+  resources :stories
+  resources :comments
 
   # Example resource route with options:
   #   resources :products do
