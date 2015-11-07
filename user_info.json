@@ -1,0 +1,46 @@
+[
+{
+	user_id: 1,
+	name: Timothy Cheung,
+	email: timothycheung@gmail.com,
+	password: timothycheung
+	type: patient
+}
+,
+
+
+{
+	user_id: 2,
+	name: Michael Xie,
+	email: michaelxie@gmail.com,
+	password: michaelxie,
+	type: patient
+}
+,
+
+{
+	user_id: 3,
+	name: Daniel Chang,
+	email: danielchang@gmail.com,
+	password: danielchang,
+	type: caregiver
+}
+,
+
+{
+	user_id: 4,
+	name: Thu Trang Pham,
+	email: thutrangpham@gmail.com,
+	password: thutrangpham,
+	type: patient
+}
+,
+
+{
+	user_id: 5,
+	name: Tom Choi,
+	email: tomchoi@gmail.com,
+	password: tomchoi,
+	type: caregiver
+}
+]
