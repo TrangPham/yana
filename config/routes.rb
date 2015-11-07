@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :stories
   resources :comments
+  
+  post 'stories/search' => 'search#search'
 
   # Example resource route with options:
   #   resources :products do
