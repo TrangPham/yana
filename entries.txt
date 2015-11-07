@@ -65,4 +65,159 @@ text: "The society in which we and our children find ourselves provides for the 
 
 {
 user_id: 2,
-date: 
+date: 858902400,
+text: "Life outside me has become too new and strange and fast. The time will
+come when I will be focused only on my bodily needs."
+}
+
+{user_id: 2,
+date: 859420800,
+text: "Radio without Borders had an open discussion today on the relationship between children and elderly parents. This topic has kept me busy (seriously) for the past year. I have come so far that I say not only the children have to become independent from the parents, but also the parents from the children.
+
+For me this process was accompanied by much quiet heartsoreness and emotion
+and I had to work very hard at it. I gave my emotion and heartsoreness over to
+the most holy in myself and to the Holy of Holies, since I feel I can love the
+children more when I am not mad with heartsoreness or distracted by emotion.
+To me love is openness in every direction, and in respect of my children this
+is only possible if I expect nothing from them and blame them for nothing—then
+they will come to me out of love."
+} 
+
+{
+  user_id: 3,
+  date: 1307475918000,
+  title: "The War Zone Of Dementia",
+  text: "The year was 2011, and a chilly November had just begun. Snow had mercifully held off until this morning, giving my family the window needed to carry out a task I wouldn't have believed possible, even a month earlier.
+
+My mother and I had been doing battle in the war zone of dementia for several years now. Together we'd colluded in the pretense that if we put enough strategies in place, Mom would be able to remain independent in her home.
+
+It wasn't to be, though. Most forms of dementia don't surrender to treatment or medication, much less reasoning or clever strategies. Dementia soldiers on, relentless, occupying new territory in the brain, changing the horizon, changing the culture, changing everything, until the existence that is, no longer resembles the existence that was.
+
+Mom and I had been going at this as though it were a battle we could win by determination and intelligence. My brother lived several hours away, but when he visited, he joined us in our delusion. In the past few months, though, I'd come to accept the truth. Mom's mental capacity had been invaded by a silent, formidable enemy. No rescue was going to come. Only support, in the form of…. me."
+}
+
+{
+  user_id: 3,
+  date: 1311536718000,
+  title: "Not Alone",
+  text: "Often, I'd felt alone in my role as caregiver, but I knew I wasn't. People were praying. Week after week, month after month, I'd shared our deteriorating situation with my church and together we prayed. And prayed. And prayed. Until one day Mom had, of her own volition, decided it was time to move out of her house and into assisted living.
+
+Only the Lord could have changed her demented thought process to not only make this decision, but follow through on it.
+
+Yes, I helped her carry out all the tasks needed to find a residence of her choice, go through the leasing agreement, have a medical check-up, and plan the actual move. But it was God who kept her mind on track so she was able to move forward. My brother and I had no legal means to make decisions on Mom's behalf. Even in her demented state of mind, the law was clear.
+
+Mom was in charge of all her affairs.
+
+Looking back, it truly was a miracle."
+}
+
+{
+  user_id: 3,
+  date: 1312055118000,
+  title: "Words From Joshua",
+  text: "On this particular day, I was reading in Joshua Chapter 1, and found myself in tears.
+
+Joshua was addressing the tribes God had allowed to settle on the far side of the Jordan River, away from where the battles would take place as the Jewish Nation moved in and took possession of the Promised Land. Joshua said to the tribes,
+
+\"You are to help them until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land.
+
+Joshua's words wrapped around my being like a protective hug. I opened my laptop to my journal."
+}
+
+{
+  user_id: 3,
+  date: 1320090318000,
+  text: "I have to admit, Lord, I'm still in a state of shock. It's hard to believe that after so many years supporting Mom to live independently in her own home, she's voluntarily made the move to a senior's residence.
+
+Dementia is a relentless master, though. Even Mom recognized that. I remember the day I was visiting her and she suddenly stood up and fumed, \"Someone needs to write this down. This is happening in other people's brains. You need to write about this.\"  That's when I realized my journaling was doing exactly what she'd demanded – that there be a record of this period in her life when her brain was betraying her.
+
+I've continued to journal as my brother and I have been drawn into this craziness. For a long time, Mom pulled Lawrence and me into her fantasy that things weren't as bad as they were, that we could maintain the illusion Mom's condition wouldn't deteriorate further. Still, her ability to care for herself and her house became more erratic, and pretending couldn't change that.  But since she never set up a power of attorney for us to make decisions on her behalf, all we could do was follow her lead, no matter how turbulent that was. Each crisis made it clear this couldn't last, but I had no idea how the change was going to be put in motion.
+
+It still amazes me how the Lord managed to work everything out so Mom voluntarily made the move to assisted living. My prayer group at church sent up an ongoing barrage of requests to the Lord on Mom's behalf these past couple of years. I know Mom's not a believer, and neither is my brother, but God still moved in her life. He cleared Mom's mind enough for her to take the steps to apply to live at Whyte Hall, to understand that she was signing a rental agreement, to even be excited that the moving truck was coming to get the few things she needed to furnish her new apartment.  It took barely a month from start to finish, and the move was completed November 1st.
+
+Lawrence is staying with her for a few days, sleeping on the floor in her little 1 bedroom apartment, to help her get used to the new routine. He'll drive the five hours back home at the end of the week. Then I'll take over.
+
+He phoned me yesterday, though, and said it's appearing that we've simply changed one set of challenges for another.
+
+Lord, I'm praying that you'll stay close as Mom goes through this transition. Her chapter of independent living has concluded. A new chapter is beginning."
+}
+
+{
+  user_id: 3,
+  date: 1320522318000,
+  title: "My brother, Lawrence leaves"
+  text: "Today was a hard one for Mom. When I got to her apartment Lawrence was ready to explode. I walked through the door and she immediately started in on me.
+
+\"The three of us have to go over to the bank right now. We have to talk to them about this.\"
+
+\"What do we need to talk to them about?\" I asked. Lawrence, standing behind her, was rolling his eyes. I could see he'd been trying to get that information from her as well.
+
+\"You'd better know what could come and with the mortgages and the university owns all that property,\" she explained, exasperated. \"If they decide to take the house, they just could you know.\"
+
+I tried to make sense out of her confused rambling. I knew from experience there was some kind of logic behind her concern, but for the life of me, I couldn't find it.
+
+\"The university doesn't own the house, Mom. You own it.\"
+
+\"That's what you think, is it? Well, why don't we go over to the bank right now? I don't know what's wrong with you two.  Is Lawrence's brain squirrely now too?\"
+
+\"Mom, I don't want to go over to the bank unless we understand what it is you want to talk to them about. And we'd need an appointment.\"
+
+\"Appointment,\" she scoffed. \"You don't know how to do it. Get your coats. Where's my coat. We need to go now.\"
+
+Lawrence slipped behind her to the little vestibule and put on his jacket. He held up his travel bag and waved a silent good-bye, hoping to slip out unnoticed. His few days of trying to help Mom get oriented had warranted no appreciation from her. I could tell that his altruistic motives had been exhausted.  I expected the five-hour drive home would be a welcome break after these past few days.
+
+Mom glanced back and saw him leaving. I waved goodbye and he disappeared out the door.
+
+\"What is he doing? Why is he running away like that?\"
+
+\"It's time for him to go back up north,\" I explained. \"He's been here a week now. He's got to take care of his pets at the homestead.\"
+"
+}
+
+{
+  user_id: 3,
+  date: ,
+  title: "Best To Agree"
+  text: "Explanations didn't help. I sat and listened to Mom's rambling for the next half hour, trying to decode what was in her mind. Her words kept shifting back to the bank, but I couldn't grasp what business she felt needed to be dealt with. It seemed she was worried about the economy and what might happen if it collapsed.
+
+\"This happened before, you know,\" she fretted. \"Back in the '30s the banks just up and took properties. If they did it then they can do it now.\"
+
+I'd learned by now that agreement was the best approach with dementia, so I tried to join her train of thought.
+
+\"Yes, you're right, Mom. They did do it before and they could do it again. What do you think we should do about it now?\"
+
+\"Nothing!\" she spat angrily. \"There's nothing you can do!\"
+
+In a firm, calm tone, I took my stand. \"Well, if there's nothing we can do, then I'm not going to worry about something that hasn't happened. You've just said there's nothing we can do to prevent it. Talking to the bank won't change anything then.\"
+
+Mom glared at me. She didn't seem pleased that I'd managed to turn her argument back on her. It did end the conversation, though, and I was relieved for that. Now we could move to the next task. The clock indicated lunch was to be served in twenty minutes. It was time to go down to the dining room."
+}
+
+{
+  user_id: 3,
+  date: ,
+  title: "Heading To Dining Room"
+  text: "Mom shook a bony wrist at me, waggling a red plastic curly cord that held her apartment keys, courtesy of the front desk. \"I have to wear this. Do you see this? It looks stupid. I have to take it everywhere!\"
+
+\"You could put it in your purse,\" I suggested.
+
+\"What do you know? It has to be here where they can see it!\"
+
+Never one to break the rules, Mom seemed furious at the perceived concessions she had to make in this place. After forty years of living alone in her own home, with  no one but herself to tell her what to do, this new situation rankled.
+
+I held my peace, though, recalling what the Lord had taught me some months ago. It was not my job to make Mom happy. Mine was to help her settle in. The rest was up to him. And her. I wondered if she'd be able to allow herself to get used to the changes. 2 Corinthians 10:5 came to mind. Such a thought was unproductive, so I quickly took it captive, making it obedient to Jesus, and let it go.
+
+Besides. It was time for lunch. Locking her apartment door as we left was a struggle, though. Mom fumbled to find the keyhole. I wasn't sure if her vision was causing the problem, or if her stress was making it hard to focus. With coaching and a few careful nudges on my part, the key finally slipped in and was turned with a satisfying clunk.
+
+Mom's apartment was at the end of the hall, furthest from the elevators. Others were emerging from their apartments and we joined the painstaking parade of seniors, many pushing walkers, a couple holding onto the railings which lined both sides of the hallway.
+
+We joined the queue at the elevator and I smiled pleasantly at my mother's neighbours. A part of me realized I was working very hard to help her make a good impression; rather like a mother taking her child to her first day of school. It was patronizing on my part, but I couldn't stop myself. I wanted Mom to make friends, to be accepted.
+
+\"That's where I have to wash clothes,\" Mom suddenly burst out. \"The garbage is in there.\"
+
+I followed her accusatory finger pointing to a door labeled LAUNDRY. A couple of ladies looked at each other. I realized that those who were of sound mind had probably figured out Mom was struggling in that area. What did they think of having a new neighbour who had dementia?
+
+The elevator arrived and we shuffled inside. Buttons as big as a soda cracker proclaimed the floor numbers. Everyone stood still for a few moments. Finally one gentleman huffed and pushed the button for Ground. After a very long pause the doors closed.
+
+We were on our way to lunch."
+}
