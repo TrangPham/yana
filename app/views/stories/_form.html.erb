@@ -1,12 +1,18 @@
-<%= form_for @entry do |f| %>
+
+<form#story-form accept-charset="UTF-8" action="/stories" method="post" data-remote="true">
+  <input name="authenticity_token" value="#{form_authenticity_token}" type="hidden">
+  <input class="user_id" name="user_id" type="hidden">
   <div id="title">
-    <%= f.text_field :title , placeholder: 'Make this cooler by writing a title' %>
+    <input id="story_title" type="text" placeholder= 'Make this cooler by writing a title' >
   </div>
   <div id="content">
-    <%= f.text_area :content , placeholder: 'Write your stories here', class: 'wysihtml5 story-content'%>
+    <textarea id="story_content" class="wysihtml5 story-content" placeholder='Write your stories here' required= true>
+    </textarea>
   </div>
-<% end %>
-
+  <div id="submit-btn">
+    <input class="btn btn-default" type="submit" name="Save">
+  </div>
+</form> 
 <script type="text/javascript">
   $(document).ready(function(){
 
