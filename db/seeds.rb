@@ -41,7 +41,7 @@ tom = User.new(
   name: 'Tom Bobby Choi',
   email: 'tombobbychoi@gmail.com',
   password: 'tombobbychoi',
-  category: 'patient'
+  category: 'caregiver'
 )
 tom.save!
 
