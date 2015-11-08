@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <h1><%= @user.name %></h1>
+
   <% if @stories.empty? %>
     <% if @user.id == current_user %>
       <p>You have no stories. <a href='/stories/new'>Write a story?</a></p>
@@ -8,10 +9,7 @@
     <% end %>
   <% else %>
     <% @stories.each do |story| %>
-      <h2><%= story.title %></h2>
-      <p><%= story.content %></p>
-      <p><%= story.votes %></p>
-      <p><%= story.comments.count %></p>
+      <%= render partial: 'layouts/story', locals: {story: story} %>
     <% end %>
   <% end %>
 <% else %>
