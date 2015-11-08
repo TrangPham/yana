@@ -160,3 +160,10 @@ p.navbar-text {
   color: #0b6ebf;
   font-weight: bold;
 }
+.fa-heart {
+  &:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #FFD54F;
+    color: #D81B60;
+  }
+}
