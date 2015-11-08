@@ -112,17 +112,52 @@ app.post('/api/entry', function(req, res) {
 });
 
 
-/*
 app.get('/api/search', function(req, res) {
-  console.log(req.query.q);
+  console.log('Q ', req.query.q);
+
+  var qstr = req.query.q;
+  var qlist = qstr.split(' ');
+
+  console.log('Q2', qlist);
+
+  var body = {
+    query: {
+      bool: {
+        should: [
+          {
+            bool: {
+              should: [
+                {
+                  more_like_this: {
+                    fields: ['content'],
+                    like: qlist,
+                    min_term_freq: 1,
+                    min_doc_freq: 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  };
 
   var options = {
-    uri: 'http://localhost:9200/yana/entry',
+    uri: 'http://localhost:9200/yana/entry/_search',
     method: 'GET',
-    body: '',
+    body: JSON.stringify(body)
   };
+
+  request(options, function(err, response, data) {
+    console.log('search result:', data);
+
+    res.statusCode = 200;
+    res.json(JSON.parse(data).hits.hits);
+
+  });
+
 });
-*/
 
 
 /*

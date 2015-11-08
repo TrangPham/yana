@@ -8,9 +8,43 @@
 </div>
 
 <% if user_signed_in? %>
+
+  <!--
   <% @stories.each do |story| %>
     <%= render partial: 'layouts/story', locals: {story: story} %>
   <% end %>
+  -->
+
+  <div id="search-result">
+  </div>
+
 <% else %>
 <p> You must be signed in to view stories </p>
 <% end %>
+
+<script>
+
+$(document).ready(function() {
+
+  $('#search-query').on('keyup', function() {
+    console.log('hello key pressed', $('#search-query').val());
+
+    var q = $('#search-query').val();
+
+    if (q.length < 3) return;
+
+    $.get('http://localhost:54321/api/search?q='+q, function(data, status) {
+      console.log(data);
+
+      $('#search-result').empty();
+      data.forEach(function(d) {
+        $('#search-result').append('<div>' + d._source.content + '</div><br><br>');
+      });
+
+
+    });
+  });
+
+});
+
+</script>
