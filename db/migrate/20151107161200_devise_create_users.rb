@@ -32,8 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## personal information
       t.string :location
-      t.string :first_name
-      t.string :last_name
+      t.string :name
       t.date :birth_date
       t.string :category
       t.string :gender

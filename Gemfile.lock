@@ -8,13 +8,6 @@ GIT
       hashie
     elasticsearch-rails (0.1.8)
 
-GIT
-  remote: git://github.com/nerian/bootstrap-wysihtml5-rails.git
-  revision: a4b413aa1c9d5f614a33c3c1f5731ed8bc6302de
-  specs:
-    bootstrap-wysihtml5-rails (0.3.3.7)
-      railties (>= 3.0)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -58,6 +51,8 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-wysihtml5-rails (0.3.3.7)
+      railties (>= 3.0)
     builder (3.2.2)
     byebug (8.0.0)
     coffee-rails (4.1.0)
@@ -203,7 +198,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-wysihtml5-rails!
+  bootstrap-wysihtml5-rails
   bundler (>= 1.8.4)
   byebug
   devise

@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20151107195549) do
     t.text    "content"
     t.integer "user_id"
     t.integer "tag_id"
-    t.integer "created_at", null: false
-    t.integer "updated_at", null: false
+    t.integer "created_at",                 null: false
+    t.integer "updated_at",                 null: false
+    t.boolean "private",    default: false
+    t.integer "vote",       default: 0
   end
 
   create_table "tags", force: :cascade do |t|
@@ -48,24 +50,16 @@ ActiveRecord::Schema.define(version: 20151107195549) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "location"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.date     "birth_date"
     t.string   "category"
     t.string   "gender"
     t.text     "bio"
     t.integer  "created_at",                          null: false
     t.integer  "updated_at",                          null: false
-
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "votes", force: :cascade do |t|
-    t.integer "v_count"
-    t.integer "created_at", null: false
-    t.integer "updated_at", null: false
-  end
 
 end
