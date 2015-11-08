@@ -356,9 +356,16 @@ content: "Today was not a good day. Alan insisted that some folders I had in my 
 He then started shouting to non-existent people in the house. While he was distracted I managed to scramble into the loo and lock the door. He kept banging at the door trying to get in. After about 15 minutes when all seemed quiet outside I came out. He then treated me as though nothing had happened and wondered why I had been crying."
 )
 
-Story.create!(user_id: tom.id,
+story = Story.create!(user_id: tom.id,
 created_at: 967766400,
 content: "Aricept was prescribed again. (It was originally prescribed in June but Alan hid the tablets from me)."
+)
+
+Comment.create!(
+  user_id: tom.id,
+  story_id: story.id,
+  created_at: 967766400,
+  content: "Alan shouldn't have hid them from you. Does he not want you to get better? I think if the doctor prescribed, then you should heed his medical advise. I wish you the best :)"
 )
 
 

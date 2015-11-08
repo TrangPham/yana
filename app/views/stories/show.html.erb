@@ -1,0 +1,9 @@
+<% if @story.nil? %>
+  <p>Unable to find story.</p>
+<% else %>
+  <% if @story.private && current_user.id != @story.user_id %>
+    <p>Unable to find story.</p>
+  <% else %>
+    <%= render partial: 'stories/read', locals: {story: @story} %>
+  <% end %>
+<% end %>
