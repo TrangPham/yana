@@ -120,10 +120,26 @@ app.get('/api/search', function(req, res) {
 
   console.log('Q2', qlist);
 
+  var tagQueryList = [];
+  qlist.forEach(function(d) {
+    tagQueryList.push({
+      "term": {
+        "tags.raw": d
+      }
+    });
+  });
+
+
   var body = {
     query: {
       bool: {
         should: [
+          {
+            bool: {
+              should: tagQueryList,
+              "minimum_number_should_match": 1
+            }
+          },
           {
             bool: {
               should: [
@@ -132,7 +148,8 @@ app.get('/api/search', function(req, res) {
                     fields: ['content'],
                     like: qlist,
                     min_term_freq: 1,
-                    min_doc_freq: 1
+                    min_doc_freq: 1,
+                    boost: 5
                   }
                 }
               ]

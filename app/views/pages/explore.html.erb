@@ -31,16 +31,21 @@ $(document).ready(function() {
 
     var q = $('#search-query').val();
 
-    if (q.length < 3) return;
+    if (q.length < 3) {
+      $('#search-result').empty();
+      return;
+    }
 
     $.get('http://localhost:54321/api/search?q='+q, function(data, status) {
       console.log(data);
 
       $('#search-result').empty();
       data.forEach(function(d) {
-        $('#search-result').append('<div>' + d._source.content + '</div><br><br>');
-      });
+        var title = d._source.title || '';
+        var content = d._source.content || '';
 
+        $('#search-result').append('<div class="story"><h2>' + title + '</h2><p>' + content + '</p></div><br><hr>');
+      });
 
     });
   });
