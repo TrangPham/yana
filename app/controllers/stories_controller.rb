@@ -7,6 +7,7 @@ class StoriesController < ApplicationController
   def create
     story = Story.new(story_params)
     story.user_id = current_user.id
+    story.private = params[:private] == 'on'
     if story.save!
       render json: { id: story.id }, status: :created
     else
@@ -28,8 +29,9 @@ class StoriesController < ApplicationController
   end
 
   def destroy
+    story = Story.find(params[:id])
     if story.valid_user?(current_user)
-      Story.find(params[:id]).destory
+      story.destory
       render nothing: true, status: :ok
     else
       render json: { error: 'Unable to delete story.' }, status: :unprocessable_entity
@@ -44,6 +46,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.permit(:tags, :title, :private, :content)
+    params.permit(:tags, :title, :content)
   end
 end

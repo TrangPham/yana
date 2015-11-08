@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <h1><%= @user.name %></h1>
-
+  <p><%= @user.bio %></p>
   <% if @stories.empty? %>
     <% if @user.id == current_user %>
       <p>You have no stories. <a href='/stories/new'>Write a story?</a></p>
