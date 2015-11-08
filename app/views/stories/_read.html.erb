@@ -1,0 +1,17 @@
+<div id='read_story'>
+  <h2><%= story.title %></h2>
+  <p><%= story.content %></p>
+  <%= link_to 'Add Comment', story_path(story), class: "read-more-#{story.id}" %>
+  <div>
+    <i class="fa fa-heart"></i> <%= story.votes %>  
+    <i class="fa fa-comments"></i> <%= story.comments.count %>
+  </div>
+  <div id="story_comments">
+    <% story.comments.each do |comment| %>
+      <div class="comment">
+        <p><%= comment.user.name %></p>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
