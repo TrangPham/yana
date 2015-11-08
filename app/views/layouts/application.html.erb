@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/top_nav' %>
+<%= render 'layouts/top_nav' %>
+
+<%- flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, id: "flash_#{name}" %>
+<%- end -%>
 
 <%= yield %>
+
 
 </body>
 </html>

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20151107195549) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer "entry_id"
+    t.integer "story_id"
     t.integer "user_id"
     t.text    "content"
     t.integer "created_at", null: false

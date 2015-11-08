@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
 
-      t.references :entry
+      t.references :story
       t.references :user
       t.text :content
       t.integer :created_at, null: false 

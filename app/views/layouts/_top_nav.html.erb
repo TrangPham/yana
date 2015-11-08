@@ -22,11 +22,12 @@
           <li class="active"><a href="/stories/new">Write a story <span class="sr-only">(current)</span></a></li>
           <li><a href="/explore">Explore Stories</a></li>
           <li><a href="#">My Stories</a></li>
+          <li> <%= link_to('Log out', destroy_user_session_path, :method => :delete) %></li>
 
         <% else %>
 
           <li><a href='#'>Register</a></li>
-          <li><a hred='#'>Login</a></li>
+          <li><a href='/users/sign_in'>Log in</a></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
