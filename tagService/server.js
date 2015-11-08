@@ -164,6 +164,12 @@ app.get('/api/trend', function(req, res) {
     }
   };
 
+  body = {
+    query: {
+      match_all: {}
+    }
+  };
+
   var options = {
     uri: 'http://localhost:9200/yana/entry/_search',
     method: 'GET',
