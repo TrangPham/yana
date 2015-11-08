@@ -9,7 +9,8 @@ tim = User.new(
   name: 'Timothy Cheung',
   email: 'timothycheung@gmail.com',
   password: 'timothycheung',
-  category: 'patient'
+  category: 'patient',
+  bio: "I enjoyed teaching as a professor in Gender's Studies and got diagnosed with microvascular dementia five years into my dream job. Being forgetful has put me into so many awkward situation that would never have imagined"
 )
 tim.save!
 
@@ -17,7 +18,8 @@ michael = User.new(
   name: 'Michael Xie',
   email: 'michaelxie@gmail.com',
   password: 'michaelxie',
-  category: 'patient'
+  category: 'patient',
+  bio: "I have three wonderful children and worked as a social worker. After being diagnosed with mid-stage dementia, I don't want my hopes and dreams be left unheard."
 )
 michael.save!
 
@@ -25,7 +27,8 @@ daniel = User.new(
   name: 'Daniel Chang',
   email: 'danielchang@gmail.com',
   password: 'danielchang',
-  category: 'caregiver'
+  category: 'caregiver',
+  bio: "My mom has been battling dementia for several years now. I have been her sole caregiver through this journey, and I hope I can help others navigate through this quagmire by sharing my stories."
 )
 daniel.save!
 
@@ -33,7 +36,8 @@ thu = User.new(
   name: 'Thu Trang Pham',
   email: 'thutrangpham@gmail.com',
   password: 'thutrangpham',
-  category: 'patient'
+  category: 'patient',
+  bio: "I was diagnosed with dementia in 2009. In the beginning, I was angry, but I've come to realize I can live a better life by embracing the diagnosis. In fact, thinking back, there have been some funny stories."
 )
 thu.save!
 
@@ -41,7 +45,8 @@ tom = User.new(
   name: 'Tom Bobby Choi',
   email: 'tombobbychoi@gmail.com',
   password: 'tombobbychoi',
-  category: 'caregiver'
+  category: 'caregiver',
+  bio: "I am taking care of my husband, who is diagnosed with Alzheimer's. I hope that my experiences would help others in some way."
 )
 tom.save!
 
