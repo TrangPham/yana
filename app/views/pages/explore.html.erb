@@ -4,7 +4,7 @@
     <div id="search-bar">
       <%= form_tag "#", method:"get" do %>
         <div>
-          <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
+          <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text"%>
           <%= hidden_field_tag :search_value, id: "searchedValue" %>
         </div>
       <% end %>
@@ -28,6 +28,24 @@
 
 $(document).ready(function() {
 
+  var get_search = function(q) {
+    $.get('http://localhost:54321/api/search?q='+q, function(data, status) {
+      console.log(data);
+
+      $('#search-result').empty();
+      $('#search-trend').empty();
+      $('#search-total').empty();
+
+      $('#search-total').append('<br>Found <strong>' + data.total + '</strong> stories');
+
+      $('#search-result').append('<div id="exp-story-container">');
+      data.hits.forEach(function(d) {
+        $('#exp-story-container').append(story(d));
+      });
+      $('#search-result').append('</div>');
+
+    });
+  }
 
   var story = function(d) {
     var title = d._source.title || '';
@@ -50,14 +68,24 @@ $(document).ready(function() {
     return story;
   }
 
-  // Get trend information ?
-  $.get('http://localhost:54321/api/trend', function(data, status) {
-    $('#search-trend').append('<div id="exp-story-container">');
-    data.hits.forEach(function(d) {
-      $('#exp-story-container').append(story(d));
+  var get_trend = function() {
+    // Get trend information ?
+    $.get('http://localhost:54321/api/trend', function(data, status) {
+      $('#search-trend').append('<div id="exp-story-container">');
+      data.hits.forEach(function(d) {
+        $('#exp-story-container').append(story(d));
+      });
+      $('#search-trend').append('</div>');
     });
-    $('#search-trend').append('</div>');
-  });
+  }
+
+  //load or run search 
+  var q = $('#search-query').val();
+  if(q.length > 3) {
+    get_search(q);
+  } else {
+    get_trend();
+  }
 
   var popularTags = [];
   $('#search-popular').empty();
@@ -68,7 +96,6 @@ $(document).ready(function() {
 
     $('#search-popular').append('<strong>Trending tags: ' + popularTags.join(',&nbsp;') + '</strong>');
   });
-
 
 
   $('#search-query').on('keyup', function() {
@@ -82,23 +109,9 @@ $(document).ready(function() {
       return;
     }
 
-    $.get('http://localhost:54321/api/search?q='+q, function(data, status) {
-      console.log(data);
-
-      $('#search-result').empty();
-      $('#search-trend').empty();
-      $('#search-total').empty();
-
-      $('#search-total').append('<br>Found <strong>' + data.total + '</strong> stories');
-
-      $('#search-result').append('<div id="exp-story-container">');
-      data.hits.forEach(function(d) {
-        $('#exp-story-container').append(story(d));
-      });
-      $('#search-result').append('</div>');
-
-    });
+    get_search(q);    
   });
+
 
 });
 
