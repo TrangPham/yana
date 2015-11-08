@@ -1,19 +1,18 @@
 <div id="search-box">
+  <div id="search-popular"></div>
   <%= form_tag "#", method:"get" do %>
     <div>
       <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
       <%= hidden_field_tag :search_value, id: "searchedValue" %>
     </div>
   <% end %>
+
 </div>
 
 <% if user_signed_in? %>
 
-  <!--
-  <% @stories.each do |story| %>
-    <%= render partial: 'layouts/story', locals: {story: story} %>
-  <% end %>
-  -->
+  <div id="search-total">
+  </div>
 
   <div id="search-result">
   </div>
@@ -33,13 +32,25 @@ $(document).ready(function() {
 
   // Get trend information ?
   $.get('http://localhost:54321/api/trend', function(data, status) {
-    data.forEach(function(d) {
+    data.hits.forEach(function(d) {
       var title = d._source.title || '';
       var content = d._source.content || '';
 
       $('#search-trend').append('<div class="story"><h2>' + title + '</h2><p>' + content + '</p></div><br><hr>');
     });
   });
+
+  var popularTags = [];
+  $('#search-popular').empty();
+  $.get('http://localhost:54321/api/trend-tags', function(data, status) {
+    data.buckets.forEach(function(b) {
+      popularTags.push(b.key);
+    });
+
+    $('#search-popular').append('<strong>Trending tags: ' + popularTags.join(',&nbsp;') + '</strong>');
+  });
+
+
 
   $('#search-query').on('keyup', function() {
     console.log('hello key pressed', $('#search-query').val());
@@ -48,6 +59,7 @@ $(document).ready(function() {
 
     if (q.length < 3) {
       $('#search-result').empty();
+      $('#search-total').empty();
       return;
     }
 
@@ -56,8 +68,14 @@ $(document).ready(function() {
 
       $('#search-result').empty();
       $('#search-trend').empty();
+      $('#search-total').empty();
 
-      data.forEach(function(d) {
+      if (data.total > 0) {
+        $('#search-total').append('<br><br>Found <strong>' + data.total + '</strong> stories');
+      }
+
+
+      data.hits.forEach(function(d) {
         var title = d._source.title || '';
         var content = d._source.content || '';
 

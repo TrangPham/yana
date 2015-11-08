@@ -112,6 +112,34 @@ app.post('/api/entry', function(req, res) {
 });
 
 
+app.get('/api/trend-tags', function(req, res) {
+
+  var body = {
+    size: 0,
+    aggs: {
+      tags: {
+        terms: {
+          field: "tags"
+        }
+      }
+    }
+  };
+
+  var options = {
+    uri: 'http://localhost:9200/yana/entry/_search',
+    method: 'GET',
+    body: JSON.stringify(body)
+  };
+
+  request(options, function(err, response, data) {
+    console.log('search result:', data);
+
+    res.statusCode = 200;
+    res.json(JSON.parse(data).aggregations.tags);
+  });
+
+
+});
 
 app.get('/api/trend', function(req, res) {
 
@@ -141,7 +169,7 @@ app.get('/api/trend', function(req, res) {
     console.log('search result:', data);
 
     res.statusCode = 200;
-    res.json(JSON.parse(data).hits.hits);
+    res.json(JSON.parse(data).hits);
 
   });
 
@@ -208,7 +236,7 @@ app.get('/api/search', function(req, res) {
     console.log('search result:', data);
 
     res.statusCode = 200;
-    res.json(JSON.parse(data).hits.hits);
+    res.json(JSON.parse(data).hits);
 
   });
 
