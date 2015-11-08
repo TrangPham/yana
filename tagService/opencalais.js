@@ -38,16 +38,17 @@ module.exports = function() {
     _.forEach(data, function(v, k) {
 
       // Extract entities
+      /*
       if (v.hasOwnProperty('_typeGroup') && v._typeGroup === 'entities') {
         result.push( v.name );
       }
+      */
       if (v.hasOwnProperty('_typeGroup') && v._typeGroup === 'topics') {
         result.push( v.name );
       }
-      /*
       if (v.hasOwnProperty('_typeGroup') && v._typeGroup === 'socialTag') {
         result.push( v.name );
-      }*/
+      }
     })
     return transformer.normalize(result);
   }

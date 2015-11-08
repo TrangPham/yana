@@ -144,3 +144,13 @@ p.navbar-text {
   float: left;
   margin: 5px;
 }
+.pill {
+  background: #369;
+  color: #ddd;
+  border-radius: 4px;
+  padding: 4px;
+}
+.pill:hover {
+  background: #58A;
+  cursor: pointer;
+}

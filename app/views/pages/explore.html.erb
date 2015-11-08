@@ -26,7 +26,17 @@
 
 <script>
 
+function test(val) {
+  // console.log('test', val);
+
+  console.log('val ', val);
+  $('#search-query').val(val + ' ');
+
+}
+
+
 $(document).ready(function() {
+
 
 
   // Get trend information ?
@@ -57,12 +67,19 @@ $(document).ready(function() {
       popularTags.push(b.key);
     });
 
-    $('#search-popular').append('<strong>Trending tags: ' + popularTags.join(',&nbsp;') + '</strong>');
+    var str = '';
+    popularTags.forEach(function(tag) {
+      str += '<span class="pill" onClick="test(\'' + tag +  '\')">&nbsp;'+ tag + '&nbsp;</span>&nbsp;&nbsp;';
+    });
+    console.log('str', str);
+
+
+    $('#search-popular').append('<strong>Trending tags: ' + str + '</strong>');
   });
 
 
 
-  $('#search-query').on('keyup', function() {
+  $('#search-query').on('keyup change paste', function() {
     console.log('hello key pressed', $('#search-query').val());
 
     var q = $('#search-query').val();
