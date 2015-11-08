@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     comment.user_id = current_user.id
     if comment.save!
-      render json: { id: comment.id }, status: :created
+      render json: { id: comment.id, u_name: current_user.name }, status: :created
     else
       render json: { error: 'Unable to save comment.' }, status: :unprocessable_entity
     end

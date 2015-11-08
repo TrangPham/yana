@@ -9,6 +9,7 @@ class Story < ActiveRecord::Base
   before_update :set_updated_at
 
   after_save :persist_to_es
+
   def valid_user?(user)
     user_id == user.id
   end
@@ -47,15 +48,17 @@ class Story < ActiveRecord::Base
   end
 
   def persist_to_es
-    url = URI.parse('http://localhost:54321/api/entry')
-    request = Net::HTTP::Post.new(url.request_uri)
-    http = Net::HTTP.new(url.host, url.port)
+    if self.private == false
+      url = URI.parse('http://localhost:54321/api/entry')
+      request = Net::HTTP::Post.new(url.request_uri)
+      http = Net::HTTP.new(url.host, url.port)
 
-    request.set_form_data('payload' => self.to_json)
+      request.set_form_data('payload' => self.to_json)
 
-    response = http.request(request)
-    if response.code != "200"
-      errors.add(:id, 'Could not presist to Elastic Search DB.')
+      response = http.request(request)
+      if response.code != "200"
+        errors.add(:id, 'Could not presist to Elastic Search DB.')
+      end
     end
   end
 end

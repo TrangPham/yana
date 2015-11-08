@@ -89,14 +89,19 @@
   padding: 10px 110px;
 }
 #story-comments {
-
+  .comment {
+    padding: 5px 10px;
+    margin: 5px 0;
+    background: white;
+    width: 100%;
+    border-radius: 5px;
+  }
   #comment-list {
     float: left;
     display: block;
     width: 995px;
     margin: 10px 0 20px 50px;
     padding-left: 10px;
-    background: white;
   }
   #comment-box {
     width: 995px;

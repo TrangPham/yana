@@ -9,20 +9,16 @@
 </div>
 <div id="story-comments">
   <div id="comment-list">
-    <% if story.comments.blank? %>
-      <span id="no-comments"> No Comments Yet </span>
-    <% else %>
-      <% story.comments.each do |comment| %>
-        <div class="comment">
-          <p><%= comment.user.name %> said:</p>
-          <p><%= comment.content %></p>
-        </div>
-      <% end %>
+    <% story.comments.each do |comment| %>
+      <div class="comment">
+        <p><%= comment.user.name %> said:</p>
+        <p><%= comment.content %></p>
+      </div>
     <% end %>
   </div>
   <div id="comment-box">
     <h4> Add Comments </h4>
-    <form id="comment-form" accept-charset="UTF-8" action="/comments" method="post" data-remote="true">
+    <form id="comment-form" accept-charset="UTF-8" data-remote="true">
       <input name="authenticity_token" value="#{form_authenticity_token}" type="hidden">
       <input class="story_id" name="story_id" type="hidden" value="<%= story.id %>">
       <div id="content">
@@ -40,6 +36,14 @@
 
   $(document).ready(function(){
     $('#comment_content').wysihtml5();
+    $( "#comment-form" ).submit(function( event ) {
+      // Stop form from submitting normally
+      event.preventDefault();
+      var s_id = $('.story_id').val();
+      var rawText = $('#comment_content').val();
+      $.post("/comments", {story_id:s_id, content:rawText}, function(data)  {
+        $('#comment-list').append('<div class="comment"><p>' + data.u_name + ' said:</p><p>' + rawText + '</p></div>');
+      });
+    });
   });
-
 </script>
