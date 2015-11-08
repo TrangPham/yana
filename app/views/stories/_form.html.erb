@@ -30,7 +30,8 @@
   $(document).ready(function(){
 
     $("#story-form").on("ajax:success", function(e, data, status, xhr) {
-      window.location.href = ('//localhost:3000/explore');
+      var tags = encodeURIComponent(data['tags']);
+      window.location.href = ('//localhost:3000/explore?search=' + tags);
     }).on("ajax:error", function(e, xhr, status, error) {
       $("#flash").append("<div id='flash_error'>Unable to save story.</div>");
     });
