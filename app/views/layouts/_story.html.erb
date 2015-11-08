@@ -8,10 +8,17 @@
   <% else %>
     <p><%= story.content %></p>
   <% end %>
-  <% verb = if current_user.id == story.user_id then 'View' else 'Add' end %>
-  <%= link_to "#{verb} Comments", story_path(story), class: "read-more-#{story.id}" %>
-  <div>
-    <i class="fa fa-heart"></i> <%= story.votes %>  
-    <i class="fa fa-comments"></i> <%= story.comments.count %>
-  </div>
+  <% if story.private? %>
+    <b>This story is private.</b> 
+  <% else %>
+    <% if current_user.id == story.user_id %>
+      <b>This story is public. </b>
+    <% end %>
+    <% verb = if current_user.id == story.user_id then 'View' else 'Add' end %>
+    <%= link_to "#{verb} Comments", story_path(story), class: "read-more-#{story.id}" %>
+    <div>
+      <i class="fa fa-heart"></i> <%= story.votes %>  
+      <i class="fa fa-comments"></i> <%= story.comments.count %>
+    </div>
+  <% end %>
 </div>
