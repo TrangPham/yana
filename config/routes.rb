@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users, only: [:show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -27,8 +29,6 @@ Rails.application.routes.draw do
   post 'stories/search' => 'search#search'
 
   get 'explore' => 'pages#explore'
-
-  get 'mystories' => 'pages#profile'
 
   # Example resource route with options:
   #   resources :products do

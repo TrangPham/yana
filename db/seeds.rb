@@ -58,6 +58,7 @@ Story.create!(
 
 Story.create!(
   user_id: tim.id,
+  private: true,
   created_at: 1299110400,
   content:
   "Saturday at the mall I performed the physical motions of shoplifting—walked

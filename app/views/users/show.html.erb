@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <h1><%= @user.name %></h1>
+  <% if @stories.empty? %>
+    <% if @user.id == current_user %>
+      <p>You have no stories. <a href='/stories/new'>Write a story?</a></p>
+    <% else %>
+      <p><%= @user.name %> has no public stories.</p>
+    <% end %>
+  <% else %>
+    <% @stories.each do |story| %>
+      <h2><%= story.title %></h2>
+      <p><%= story.content %></p>
+      <p><%= story.votes %></p>
+      <p><%= story.comments.count %></p>
+    <% end %>
+  <% end %>
+<% else %>
+<p> You must be signed in to view stories </p>
+<% end %>
