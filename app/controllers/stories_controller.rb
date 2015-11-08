@@ -50,9 +50,17 @@ class StoriesController < ApplicationController
 
   private
   def es_request(story_obj)
-    url = URI.parse('http://localhost:9200/yana/entry')
+    url = URI.parse('http://localhost:54321/api/entry')
     req = Net::HTTP::Post.new(url.request_uri)
-    req.set_form_data({'title'=>story_obj.title, 'content'=>story_obj.content, 'user_id'=>story_obj.user_id, 'created_at'=>story_obj.created_at, 'updated_at'=>story_obj.updated_at})
+
+    blah = {'title'=>story_obj.title, 'content'=>story_obj.content, 
+      'user_id'=>story_obj.user_id, 
+      'created_at'=>story_obj.created_at, 
+      'updated_at'=>story_obj.updated_at,
+      # 'tags'=>"xyz"
+      'tags'=>story_obj.tags.split(',').map{|x| x.strip}
+      }
+    req.set_form_data({'payload'=> blah.to_json})
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = (url.scheme == "https")
     response = http.request(req)
