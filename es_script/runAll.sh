@@ -26,4 +26,4 @@ echo ""
 echo ""
 echo ""
 echo "Creating test data"
-./loadTestData.sh
+./loadTestData2.sh

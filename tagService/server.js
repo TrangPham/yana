@@ -92,6 +92,38 @@ app.post('/api/alchemy', function(req, res) {
 });
 
 
+app.post('/api/entry', function(req, res) {
+
+  var payload = req.body.payload;
+  console.log('body', payload);
+
+  var options = {
+    uri: 'http://localhost:9200/yana/entry',
+    method: 'POST',
+    body: payload
+  };
+
+  request(options, function(err, response, data) {
+    console.log('ES', data);
+    res.statusCode = 200;
+  });
+
+});
+
+
+/*
+app.get('/api/search', function(req, res) {
+  console.log(req.query.q);
+
+  var options = {
+    uri: 'http://localhost:9200/yana/entry',
+    method: 'GET',
+    body: '',
+  };
+});
+*/
+
+
 /*
 app.post('/api/alchemy', function(req, res) {
   var name = req.body.name;
