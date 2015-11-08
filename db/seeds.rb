@@ -401,4 +401,4 @@ Comment.create!(
   content: "Alan shouldn't have hid them from you. Does he not want you to get better? I think if the doctor prescribed, then you should heed his medical advise. I wish you the best :)"
 )
 
-story_list.each {|story| persist_to_es(story)}
+# story_list.each {|story| persist_to_es(story)}
