@@ -1,6 +1,117 @@
 <div id="home-container">
-<section id="discoverys"></section>
-<section></section>
-<section></section>
-<section></section>
-<section></section>
+<section id="grid" class="grid discovery clearfix">
+  <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+    <figure>
+      <img src="<%=image_path('getlost.jpg') %>"/>
+      <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+      <figcaption>
+        <h2>Challenges</h2>
+        <p>What to expect when you have been diagnosed</p>
+        <button>View</button>
+      </figcaption>
+    </figure>
+  </a>
+  <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+    <figure>
+      <img src="<%=image_path('write.png') %>" />
+      <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+      <figcaption>
+        <h2>Stories</h2>
+        <p>blah.</p>
+        <button>View</button>
+      </figcaption>
+    </figure>
+  </a>
+  <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+    <figure>
+      <img src="<%=image_path('difficult.png') %>" />
+      <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+      <figcaption>
+        <h2>Insert relevant here</h2>
+        <p>blah</p>
+        <button>View</button>
+      </figcaption>
+    </figure>
+  </a>
+  <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+    <figure>
+      <img src="<%=image_path('pattern.jpg') %>" />
+      <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+      <figcaption>
+        <h2>Help</h2>
+        <p>Tips</p>
+        <button>View</button>
+      </figcaption>
+    </figure>
+  </a>
+</section>
+<hr>
+<section id="lost" >
+  <div id="text-left"> 
+    <span class="main-text"></span>
+  </div>
+  <div id="pic-right"> 
+    <img src="<%=image_path('') %>"/>
+  </div>
+</section>
+<section id="leap" >
+  <div id="text-right"> 
+    <span class="main-text"></span>
+  </div>
+  <div id="pic-left"> 
+    <img src="<%=image_path('') %>"/>
+  </div>
+</section>
+<section id="getting-back" >
+  <div id="text-left"> 
+    <span class="main-text"></span>
+  </div>
+  <div id="pic-right"> 
+    <img src="<%=image_path('') %>"/>
+  </div>
+</section>
+<section id="journey" >
+  <div id="text-right"> 
+    <span class="main-text"></span>
+  </div>
+  <div id="pic-left"> 
+    <img src="<%=image_path('') %>"/>
+  </div>
+</section>
+<section id="team" >
+  <div id="team-container"> 
+
+  </div>
+</section>
+<section id="Sponsors" >
+  <div id="sponsor-container"> 
+  </div>
+</section>
+<script type="text/javascript">
+  (function() {
+
+    function init() {
+      var speed = 250,
+        easing = mina.easeinout;
+
+      [].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+        var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+          pathConfig = {
+            from : path.attr( 'd' ),
+            to : el.getAttribute( 'data-path-hover' )
+          };
+
+        el.addEventListener( 'mouseenter', function() {
+          path.animate( { 'path' : pathConfig.to }, speed, easing );
+        } );
+
+        el.addEventListener( 'mouseleave', function() {
+          path.animate( { 'path' : pathConfig.from }, speed, easing );
+        } );
+      } );
+    }
+
+    init();
+
+  })();
+</script>

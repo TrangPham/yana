@@ -14,11 +14,20 @@
   </div>
 </form> 
 <script type="text/javascript">
+  // function onChange() { console.log("changeadf"); };
   $(document).ready(function(){
-
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
+    $('#story_content').wysihtml5({
+      events: {
+        "newword:composer": function() { 
+            console.log('loaded!');
+        }
+      }
     });
-
-  })
+    // var editor = new wysihtml5.Editor("story_content").on("newword:composer", onChange);
+    // $('.wysihtml5').contents().find('body').on("keydown",function() {
+    //     console.log("Handler for .keypress() called.");
+    // });
+    // var editor = new wysihtml5.Editor("story_content");
+    // editor.on("newword:composer", onChange);
+  });
 </script>
