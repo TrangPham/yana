@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
   before_create :set_created_at
   before_update :set_updated_at
 
-  before_save :presist_to_es
+  before_save :persist_to_es
 
   def valid_user?(user)
     user_id == user.id
@@ -16,6 +16,18 @@ class Story < ActiveRecord::Base
 
   def vote
     self.vote = vote + 1
+  end
+
+  def to_json
+    {
+      'title' => title,
+      'content' => content,
+      'user_id' => user_id,
+      'created_at' => created_at,
+      'updated_at' => updated_at,
+      # 'tags'=>"xyz"
+      'tags' => (tags || "").split(',').map(&:strip)
+    }.to_json
   end
 
   private
@@ -32,21 +44,12 @@ class Story < ActiveRecord::Base
     self.updated_at = Time.now
   end
 
-  def presist_to_es
+  def persist_to_es
     url = URI.parse('http://localhost:54321/api/entry')
     request = Net::HTTP::Post.new(url.request_uri)
     http = Net::HTTP.new(url.host, url.port)
 
-    story = {
-      'title' => title,
-      'content' => content,
-      'user_id' => user_id,
-      'created_at' => created_at,
-      'updated_at' => updated_at,
-      # 'tags'=>"xyz"
-      'tags' => tags.split(',').map(&:strip)
-    }
-    request.set_form_data('payload' => story.to_json)
+    request.set_form_data('payload' => self.to_json)
 
     response = http.request(request)
     if response.code != "200"

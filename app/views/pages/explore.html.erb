@@ -1,17 +1,16 @@
-<div id="search-box">
-  <div id="search-popular"></div>
-  <%= form_tag "#", method:"get" do %>
-    <div>
-      <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
-      <%= hidden_field_tag :search_value, id: "searchedValue" %>
-    </div>
-  <% end %>
-
-  <div id="search-total"></div>
-
-</div>
-
 <% if user_signed_in? %>
+  <div id="search-box">
+    <div id="search-popular"></div>
+    <%= form_tag "#", method:"get" do %>
+      <div>
+        <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
+        <%= hidden_field_tag :search_value, id: "searchedValue" %>
+      </div>
+    <% end %>
+
+    <div id="search-total"></div>
+
+  </div>
 
   <div id="search-result">
   </div>

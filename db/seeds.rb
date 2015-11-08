@@ -1,10 +1,23 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create!([Story.create!( name: 'Chicago' ), Story.create!( name: 'Copenhagen' )])
-#   Mayor.create!(name: 'Emanuel', city: cities.first)
+
+require 'net/http'
+require 'uri'
+
+def persist_to_es(story)
+  url = URI.parse('http://localhost:54321/api/entry')
+  request = Net::HTTP::Post.new(url.request_uri)
+  http = Net::HTTP.new(url.host, url.port)
+  request.set_form_data('payload' => story.to_json)
+
+  response = http.request(request)
+  if response.code != "200"
+    puts 'Could not presist to Elastic Search DB.'
+  end
+end
+
+#Delete all ES entries
+
 tim = User.new(
   name: 'Timothy Cheung',
   email: 'timothycheung@gmail.com',
@@ -50,8 +63,10 @@ tom = User.new(
 )
 tom.save!
 
+story_list = []
+
 # Stories
-Story.create!(
+story_list << Story.create!(
   user_id: tim.id,
   created_at: 1296864000,
   private: true,
@@ -61,7 +76,7 @@ Story.create!(
   am headed. No whimpering, no whining, no despair. Just the facts."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: tim.id,
   private: true,
   created_at: 1299110400,
@@ -73,13 +88,13 @@ Story.create!(
   back."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: michael.id,
   created_at: 857779200,
   content: "My heart does not come to rest."
 )
 
-Story.create!(user_id: michael.id,
+story_list << Story.create!(user_id: michael.id,
   created_at: 858038400,
   content: "I have started thinking seriously again that I have for years wanted to
   write an uncomplicated book without big words or much learning. Would I be
@@ -89,7 +104,7 @@ Story.create!(user_id: michael.id,
   been alone too."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: michael.id,
   created_at: 858556800,
   content: "In all my hobbies [painting, sketching, reading] I was well away when I
@@ -98,7 +113,7 @@ Story.create!(
   things had to come back gradually."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: michael.id,
   created_at: 858816000,
   content: "The society in which we and our children find ourselves provides for the
@@ -108,14 +123,14 @@ Story.create!(
   keep busy,” if one can even call that an activity? When I am not busy, I am lonely."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: michael.id,
 created_at: 858902400,
 content: "Life outside me has become too new and strange and fast. The time will
 come when I will be focused only on my bodily needs."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: michael.id,
   created_at: 859420800,
   content: "Radio without Borders had an open discussion today on the relationship between children and elderly parents. This topic has kept me busy (seriously) for the past year. I have come so far that I say not only the children have to become independent from the parents, but also the parents from the children.
@@ -129,7 +144,7 @@ Story.create!(
   they will come to me out of love."
 ) 
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1307475918,
   title: "The War Zone Of Dementia",
@@ -139,7 +154,7 @@ Story.create!(
   Mom and I had been going at this as though it were a battle we could win by determination and intelligence. My brother lived several hours away, but when he visited, he joined us in our delusion. In the past few months, though, I'd come to accept the truth. Mom's mental capacity had been invaded by a silent, formidable enemy. No rescue was going to come. Only support, in the form of…. me."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1311536718,
   title: "Not Alone",
@@ -150,7 +165,7 @@ Story.create!(
   Looking back, it truly was a miracle."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1312055118,
   title: "Words From Joshua",
@@ -160,7 +175,7 @@ Story.create!(
   Joshua's words wrapped around my being like a protective hug. I opened my laptop to my journal."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1320090318,
   content: "I have to admit, Lord, I'm still in a state of shock. It's hard to believe that after so many years supporting Mom to live independently in her own home, she's voluntarily made the move to a senior's residence.
@@ -178,7 +193,7 @@ He phoned me yesterday, though, and said it's appearing that we've simply change
 Lord, I'm praying that you'll stay close as Mom goes through this transition. Her chapter of independent living has concluded. A new chapter is beginning."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1320522318,
   title: "My brother, Lawrence leaves",
@@ -210,7 +225,7 @@ Mom glanced back and saw him leaving. I waved goodbye and he disappeared out the
 "
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1330322318,
   title: "Best To Agree",
@@ -229,7 +244,7 @@ In a firm, calm tone, I took my stand. \"Well, if there's nothing we can do, the
 Mom glared at me. She didn't seem pleased that I'd managed to turn her argument back on her. It did end the conversation, though, and I was relieved for that. Now we could move to the next task. The clock indicated lunch was to be served in twenty minutes. It was time to go down to the dining room."
 )
 
-Story.create!(
+story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1333922318,
   title: "Heading To Dining Room",
@@ -258,7 +273,7 @@ The elevator arrived and we shuffled inside. Buttons as big as a soda cracker pr
 We were on our way to lunch."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: thu.id,
 created_at: 1269287118,
 title:
@@ -269,7 +284,7 @@ How could this be? My family has no history of any form of Alzheimer's Disease. 
 I became angered, in denial and depressed at how my life would eventually turn out. Knowledge is the key to understanding this terrible disease and not giving up."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: thu.id,
 created_at: 1269459918,
 title:
@@ -293,7 +308,7 @@ I grabbed my purse and ran out and looked the door. Then I realized I did not ha
 Now do not get the wrong idea this is not forgetful, this is me and my dementia brain at work."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: thu.id,
 created_at: 1270151118,
 title:
@@ -309,7 +324,7 @@ I realize that everyone forgets things from time to time but this every single d
 Dementia is not a disease I would wish upon my worst enemy. Your memory is as if it's padlocked in a crate, you open one box and there's another box that it's locked again inside. This goes on until you get to the last small box that you imagine to hold your brain and when the last box is open all you find is a jack in the box, playing a silly tune that irritates you again."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: thu.id,
 created_at: 1270496718,
 title:
@@ -331,26 +346,26 @@ I have been late on paying bills simply because I forgot them or I didn't realiz
 This past Friday I didn't realize the water was past due until later during the day I cut the water on, it's turned off. Monday I will have to pay the bill plus the reconnection fee. Instead of thirty-eight dollars, I will now have to pay seventy-three dollars, this was my fault for not paying . How I wish I could find a better way to remember. All the bills are together, and it's written on two calendars. Still I miss paying the bill on the day it's due."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: tom.id,
 created_at: 959040000,
 content: "When I was in the middle of ironing, Alan removed the plug from the socket and said I was not to continue. When I told him that I had only a few more items to iron, he said that he wouldn't allow it.
 When I put the plug back in, he immediately took it out again. I didn't do this again, as I was a bit concerned that he may pick up the hot iron and burn me with it. He said that I knew I was in the wrong and asked why I didn't just admit it. He also mentioned that I had not paid to use the iron."
 )
 
-Story.create!(
+story_list << Story.create!(
 user_id: tom.id,
 created_at: 959731200,
 content: "Alan became very agitated prior to setting out for our appointment. He thought someone was going to murder him. When we were in the car he said that it was me who was going to murder him. I told him that I loved him and asked him why I should want to murder him. He said he didn't know but that was how he felt."
 )
 
-Story.create!(user_id: tom.id,
+story_list << Story.create!(user_id: tom.id,
 created_at: 961113600,
 content: "Alan got up before me and I went back to sleep. However, I was awakened by a pillow being pressed firmly over my head. I said, 'Stop it Alan, you're smothering me.' He said, 'That's what I'm trying to do. You've stolen my credit cards.' I soon managed to free myself and helped him look for the missing cards.
 An hour later he was tearful and apologetic. However, later in the morning he was calling me 'scum' because he couldn't find his diary and assumed I had stolen it."
 )
 
-Story.create!(user_id: tom.id,
+story_list << Story.create!(user_id: tom.id,
 created_at: 963187200,
 content: "Today was not a good day. Alan insisted that some folders I had in my hand were his and tried to grab them from me. He ended up pushing me, shoving me to the ground, slapping me and forcing me into the study. He then stood over me threateningly with his fingers digging into my arm. I made the mistake of biting his hand and he slapped me hard across the face twice.
 He then started shouting to non-existent people in the house. While he was distracted I managed to scramble into the loo and lock the door. He kept banging at the door trying to get in. After about 15 minutes when all seemed quiet outside I came out. He then treated me as though nothing had happened and wondered why I had been crying."
@@ -360,12 +375,12 @@ story = Story.create!(user_id: tom.id,
 created_at: 967766400,
 content: "Aricept was prescribed again. (It was originally prescribed in June but Alan hid the tablets from me)."
 )
-
+story_list << story
 Comment.create!(
-  user_id: tom.id,
+  user_id: story.user_id,
   story_id: story.id,
   created_at: 967766400,
   content: "Alan shouldn't have hid them from you. Does he not want you to get better? I think if the doctor prescribed, then you should heed his medical advise. I wish you the best :)"
 )
 
-
+story_list.each {|story| persist_to_es(story)}
