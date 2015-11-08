@@ -37,9 +37,9 @@ $(document).ready(function() {
 
       var story = '<div class="story"><h3>' + title + '</h3><p>';
       if(content.length > 250) {
-        story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p>';
+        story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
       } else {
-        story += content + '<a class="read-more" href="/stories/' + story_id + '">Add Comment</a></p>';
+        story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
       }
       story += '</div>';
 
@@ -89,9 +89,9 @@ $(document).ready(function() {
 
         var story = '<div class="story"><h3>' + title + '</h3><p>';
         if(content.length > 250) {
-          story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p>';
+          story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
         } else {
-          story += content + '<a class="read-more" href="/stories/' + story_id + '">Add Comment</a></p>';
+          story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
         }
         story += '</div>';
 
