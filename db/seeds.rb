@@ -74,6 +74,7 @@ story_list = []
 story_list << Story.create!(
   user_id: tim.id,
   created_at: 1296864000,
+  tags: "gender studies, hope, journal",
   private: true,
   content:
   "During my going-away meeting with Gender Studies, the faculty gave me this

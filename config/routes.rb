@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   root 'pages#home'
-  resources :stories do
+  resources :stories, except: :index do
     member do
       post 'vote'
     end
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   post 'stories/search' => 'search#search'
 
   get 'explore' => 'pages#explore'
+  get 'stories' => 'pages#explore'
 
   # Example resource route with options:
   #   resources :products do
