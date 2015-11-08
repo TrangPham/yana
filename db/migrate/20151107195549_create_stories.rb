@@ -8,7 +8,7 @@ class CreateStories < ActiveRecord::Migration
       t.integer :created_at, null: false
       t.integer :updated_at, null: false
       t.boolean :private, default: false
-      t.integer :vote, default: 0
+      t.integer :votes, default: 0
     end
   end
 end

@@ -2,6 +2,8 @@
   <% @stories.each do |story| %>
     <h2><%= story.title %></h2>
     <p><%= story.content %></p>
+    <p><%= story.votes %></p>
+    <p><%= story.comments.count %></p>
   <% end %>
 <% else %>
 <p> You must be signed in to view stories </p>

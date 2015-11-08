@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20151107195549) do
     t.integer "created_at",                 null: false
     t.integer "updated_at",                 null: false
     t.boolean "private",    default: false
-    t.integer "vote",       default: 0
+    t.integer "votes",      default: 0
   end
 
   create_table "tags", force: :cascade do |t|
