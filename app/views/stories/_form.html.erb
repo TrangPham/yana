@@ -1,13 +1,15 @@
 
-<form#story-form accept-charset="UTF-8" action="/stories" method="post" data-remote="true">
+<form id="story-form" accept-charset="UTF-8" action="/stories" method="post" data-remote="true">
   <input name="authenticity_token" value="#{form_authenticity_token}" type="hidden">
   <input class="user_id" name="user_id" type="hidden">
   <div id="title">
-    <input id="story_title" type="text" placeholder= 'Make this cooler by writing a title' >
+    <input id="story_title" type="text" name="title" placeholder= 'Make this cooler by writing a title' >
   </div>
-
+  <div>
+    <input id="story_private" type="checkbox" name="private">Private Story</input>
+  </div>
   <div id="content">
-      <textarea id="story_content" class="story-content" placeholder='Write your stories here' required= true>
+      <textarea id="story_content" class="story-content" name="content" placeholder='Write your stories here' required= true>
       </textarea>
   </div>
 

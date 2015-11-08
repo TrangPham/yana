@@ -1,3 +1,5 @@
+require 'net/http'
+
 class Story < ActiveRecord::Base
   belongs_to :user
   has_many :comments
@@ -5,6 +7,8 @@ class Story < ActiveRecord::Base
 
   before_create :set_created_at
   before_update :set_updated_at
+
+  before_save :presist_to_nosql
 
   def valid_user?(user)
     user_id == user.id
@@ -26,5 +30,13 @@ class Story < ActiveRecord::Base
 
   def set_updated_at
     self.updated_at = Time.now
+  end
+
+  def presist_to_nosql
+    # http = Net::HTTP.new('localhost', '54321')
+    # request = Net::HTTP::Post.new('api/entry')
+    # request.add_field('Content-Type', 'application/json')
+    # request.body = {'credentials' => {'username' => 'username', 'key' => 'key'}}
+    # response = http.request(request)
   end
 end
