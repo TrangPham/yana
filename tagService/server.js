@@ -135,7 +135,12 @@ app.get('/api/trend-tags', function(req, res) {
     console.log('search result:', data);
 
     res.statusCode = 200;
-    res.json(JSON.parse(data).aggregations.tags);
+    if (data && JSON.parse(data).aggregations) {
+      res.json(JSON.parse(data).aggregations.tags);
+    } else {
+      res.json({tags:{buckets:[]}});
+    }
+
   });
 
 
