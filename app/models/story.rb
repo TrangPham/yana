@@ -3,7 +3,6 @@ require 'net/http'
 class Story < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  has_many :tags
 
   before_create :set_created_at
   before_update :set_updated_at

@@ -5,6 +5,8 @@ class StoriesController < ApplicationController
   end
 
   def create
+    byebug
+    
     story = Story.new(story_params)
     story.user_id = current_user.id
     story.private = params[:private] == 'on'
