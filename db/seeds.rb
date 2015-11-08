@@ -321,7 +321,7 @@ story_list << Story.create!(
 user_id: thu.id,
 created_at: 1270151118,
 votes: 3,
-tags: "annoyances, bother me, patience, damaged brain, forgotten",
+tags: "annoyances, bother me, patience, damaged brain, forgotten, concerned voice",
 title:
 "Matters That Annoy You Now Diary of an Alzheimer's Patient",
 content: 
@@ -371,14 +371,14 @@ story_list << Story.create!(
 user_id: tom.id,
 created_at: 959731200,
 votes: 0,
-tags: "agitation, appointment, murder, love"
+tags: "agitation, appointment, murder, love, bed, pillow"
 content: "Alan became very agitated prior to setting out for our appointment. He thought someone was going to murder him. When we were in the car he said that it was me who was going to murder him. I told him that I loved him and asked him why I should want to murder him. He said he didn't know but that was how he felt."
 )
 
 story_list << Story.create!(user_id: tom.id,
 created_at: 961113600,
 votes: 2,
-tags: "smother, pillow, sleep, stolen, tearful, apologetic, diary"
+tags: "smother, pillow, sleep, stolen, tearful, apologetic, diary, concerned voice"
 content: "Alan got up before me and I went back to sleep. However, I was awakened by a pillow being pressed firmly over my head. I said, 'Stop it Alan, you're smothering me.' He said, 'That's what I'm trying to do. You've stolen my credit cards.' I soon managed to free myself and helped him look for the missing cards.
 An hour later he was tearful and apologetic. However, later in the morning he was calling me 'scum' because he couldn't find his diary and assumed I had stolen it."
 )
