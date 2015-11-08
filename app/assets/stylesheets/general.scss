@@ -11,3 +11,15 @@ body {
   margin-left: -45px;
   margin-top: -15px;
 }
+.discovery {
+  height: 400px;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
