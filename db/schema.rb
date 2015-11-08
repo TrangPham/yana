@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20151107195549) do
     t.text    "content"
     t.integer "user_id"
     t.integer "tag_id"
-    t.integer "created_at", null: false
-    t.integer "updated_at", null: false
+    t.integer "created_at",                 null: false
+    t.integer "updated_at",                 null: false
+    t.boolean "private",    default: false
   end
 
   create_table "tags", force: :cascade do |t|

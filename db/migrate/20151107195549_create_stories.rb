@@ -5,8 +5,9 @@ class CreateStories < ActiveRecord::Migration
       t.text :content
       t.references :user
       t.references :tag
-      t.integer :created_at, null: false 
-      t.integer :updated_at, null: false 
+      t.integer :created_at, null: false
+      t.integer :updated_at, null: false
+      t.boolean :private, default: false
     end
   end
 end

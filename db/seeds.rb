@@ -49,6 +49,7 @@ tom.save!
 Story.create!(
   user_id: tim.id,
   created_at: 1296864000,
+  private: true,
   content:
   "During my going-away meeting with Gender Studies, the faculty gave me this
   journal. In it I’ll report my descent into the post-cerebral realm for which I
@@ -58,18 +59,6 @@ Story.create!(
 Story.create!(
   user_id: tim.id,
   created_at: 1299110400,
-  content:
-  "Saturday at the mall I performed the physical motions of shoplifting—walked
-  out of Macy’s with a pair of pants over my arm. I only noticed when I was
-  inside Dillard’s on the opposite side of the mall. I hurried back, ready to
-  explain. There were no salespeople around, and no one noticed when I put them
-  back."
-)
-
-
-Story.create!(
-  user_id: tim.id,
-  created_at: 1299542400,
   content:
   "Saturday at the mall I performed the physical motions of shoplifting—walked
   out of Macy’s with a pair of pants over my arm. I only noticed when I was

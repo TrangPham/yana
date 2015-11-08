@@ -40,6 +40,6 @@ class StoriesController < ApplicationController
   def story_params
     story = params.require(:story)
     story.require(:content)
-    story.permit(:tags, :title)
+    story.permit(:tags, :title, :private)
   end
 end
