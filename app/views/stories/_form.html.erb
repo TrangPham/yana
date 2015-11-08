@@ -29,6 +29,11 @@
 
   $(document).ready(function(){
 
+    $("#story-form").on("ajax:success", function(e, data, status, xhr) {
+      window.location.href = ('//localhost:3000/explore');
+    }).on("ajax:error", function(e, xhr, status, error) {
+      $("#flash").append("<div id='flash_error'>Unable to save story.</div>");
+    });
 
     $('#story_content').wysihtml5({
       'events': {

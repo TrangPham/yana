@@ -1,13 +1,14 @@
 <% if user_signed_in? %>
   <div id="search-box">
     <div id="search-popular"></div>
-    <%= form_tag "#", method:"get" do %>
-      <div>
-        <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
-        <%= hidden_field_tag :search_value, id: "searchedValue" %>
-      </div>
-    <% end %>
-
+    <div id="search-bar">
+      <%= form_tag "#", method:"get" do %>
+        <div>
+          <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
+          <%= hidden_field_tag :search_value, id: "searchedValue" %>
+        </div>
+      <% end %>
+    </div>
     <div id="search-total"></div>
 
   </div>
@@ -30,6 +31,7 @@ $(document).ready(function() {
 
   // Get trend information ?
   $.get('http://localhost:54321/api/trend', function(data, status) {
+    $('#search-trend').append('<div id="exp-story-container">');
     data.hits.forEach(function(d) {
       var title = d._source.title || '';
       var content = d._source.content || '';
@@ -43,8 +45,9 @@ $(document).ready(function() {
       }
       story += '</div>';
 
-      $('#search-trend').append(story);
+      $('#exp-story-container').append(story);
     });
+    $('#search-trend').append('</div>');
   });
 
   var popularTags = [];

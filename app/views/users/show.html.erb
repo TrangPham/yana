@@ -1,6 +1,8 @@
-<% if user_signed_in? %>
-  <h1><%= @user.name %></h1>
-  <p><%= @user.bio %></p>
+<div id="cur-user-info">
+  <% if user_signed_in? %>
+    <h1><%= @user.name %></h1>
+    <p><%= @user.bio %></p>
+</div>
   <div id="my-story-container">
     <% if @stories.empty? %>
       <% if @user.id == current_user %>
