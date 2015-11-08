@@ -1,33 +1,38 @@
 class StoriesController < ApplicationController
   def new
-    @entry = Story.new
+    @story = Story.new
   end
 
   def create
-    entry = Story.new(entry_params)
-    entry.user = current_user
-    if entry.save!
-      render json: { id: entry.id }, status: :created
+    story = Story.new(entry_params)
+    story.user_id = current_user.id
+    if story.save!
+      render json: { id: story.id }, status: :created
     else
-      render json: { error: 'Unable to save entry.' }, status: :unprocessable_entity
+      render json: { error: 'Unable to save story.' }, status: :unprocessable_entity
     end
   end
 
   def edit
-    @entry = Story.find(params[:id])
+    @story = Story.find(params[:id])
   end
 
   def update
-    entry = Story.find(params[:id])
-    if entry.update!(entry_params)
+    story = Story.find(params[:id])
+    if story.valid_user?(current_user) && story.update!(entry_params)
       render nothing: true, status: :ok
     else
-      render json: { error: 'Unable to update entry.' }, status: :unprocessable_entity
+      render json: { error: 'Unable to update story.' }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    Story.find(params[:id]).destory
+    if story.valid_user?(current_user)
+      Story.find(params[:id]).destory
+      render nothing: true, status: :ok
+    else
+      render json: { error: 'Unable to delete story.' }, status: :unprocessable_entity
+    end
   end
 
   private

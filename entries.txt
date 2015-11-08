@@ -1,3 +1,4 @@
+[
 {
 user_id: 1,
 create_at:1296864000000,
@@ -7,7 +8,7 @@ journal. In it I’ll report my descent into the post-cerebral realm for which I
 am headed. No whimpering, no whining, no despair. Just the facts."
 
 }
-
+,
 {
 user_id: 1
 title:
@@ -19,7 +20,7 @@ inside Dillard’s on the opposite side of the mall. I hurried back, ready to
 explain. There were no salespeople around, and no one noticed when I put them
 back."
 }
-
+,
 {
 user_id: 1
 title:
@@ -31,13 +32,13 @@ inside Dillard’s on the opposite side of the mall. I hurried back, ready to
 explain. There were no salespeople around, and no one noticed when I put them
 back."
 }
-
+,
 {
 user_id: 2,
 create_at: 857779200,
 content: "My heart does not come to rest."
 }
-
+,
 {user_id: 2,
 create_at: 858038400,
 content: "I have started thinking seriously again that I have for years wanted to
@@ -47,7 +48,7 @@ Most importantly, it will create an activity here in my retirement center
 where I spend most of my time alone. In any other private house I would have
 been alone too."
 }
-
+,
 {
 user_id: 2,
 create_at: 858556800000,
@@ -56,20 +57,20 @@ became ill last year in early February; after my illness, however, I could not
 even write my name or write as I’m doing here now. What used to be everyday
 things had to come back gradually."
 }
-
+,
 {
 user_id: 2,
 create_at: 858816000000,
 content: "The society in which we and our children find ourselves provides for the care of children from when they’re small, adults work the whole day, old people are rightfully taken care of in retirement and old-age homes. However, what about the wherewithal of which loneliness snips the wings? Or those like me, who “struggle to keep busy,” if one can even call that an activity? When I am not busy, I am lonely."
 }
-
+,
 {
 user_id: 2,
 create_at: 858902400,
 content: "Life outside me has become too new and strange and fast. The time will
 come when I will be focused only on my bodily needs."
 }
-
+,
 {user_id: 2,
 create_at: 859420800,
 content: "Radio without Borders had an open discussion today on the relationship between children and elderly parents. This topic has kept me busy (seriously) for the past year. I have come so far that I say not only the children have to become independent from the parents, but also the parents from the children.
@@ -82,7 +83,7 @@ To me love is openness in every direction, and in respect of my children this
 is only possible if I expect nothing from them and blame them for nothing—then
 they will come to me out of love."
 } 
-
+,
 {
   user_id: 3,
   create_at: 1307475918000,
@@ -95,7 +96,7 @@ It wasn't to be, though. Most forms of dementia don't surrender to treatment or 
 
 Mom and I had been going at this as though it were a battle we could win by determination and intelligence. My brother lived several hours away, but when he visited, he joined us in our delusion. In the past few months, though, I'd come to accept the truth. Mom's mental capacity had been invaded by a silent, formidable enemy. No rescue was going to come. Only support, in the form of…. me."
 }
-
+,
 {
   user_id: 3,
   create_at: 1311536718000,
@@ -110,7 +111,7 @@ Mom was in charge of all her affairs.
 
 Looking back, it truly was a miracle."
 }
-
+,
 {
   user_id: 3,
   create_at: 1312055118000,
@@ -123,7 +124,7 @@ Joshua was addressing the tribes God had allowed to settle on the far side of th
 
 Joshua's words wrapped around my being like a protective hug. I opened my laptop to my journal."
 }
-
+,
 {
   user_id: 3,
   create_at: 1320090318000,
@@ -141,7 +142,7 @@ He phoned me yesterday, though, and said it's appearing that we've simply change
 
 Lord, I'm praying that you'll stay close as Mom goes through this transition. Her chapter of independent living has concluded. A new chapter is beginning."
 }
-
+,
 {
   user_id: 3,
   create_at: 1320522318000,
@@ -173,7 +174,7 @@ Mom glanced back and saw him leaving. I waved goodbye and he disappeared out the
 \"It's time for him to go back up north,\" I explained. \"He's been here a week now. He's got to take care of his pets at the homestead.\"
 "
 }
-
+,
 {
   user_id: 3,
   create_at: 1330322318000,
@@ -192,7 +193,7 @@ In a firm, calm tone, I took my stand. \"Well, if there's nothing we can do, the
 
 Mom glared at me. She didn't seem pleased that I'd managed to turn her argument back on her. It did end the conversation, though, and I was relieved for that. Now we could move to the next task. The clock indicated lunch was to be served in twenty minutes. It was time to go down to the dining room."
 }
-
+,
 {
   user_id: 3,
   create_at: 1333922318000,
@@ -221,7 +222,7 @@ The elevator arrived and we shuffled inside. Buttons as big as a soda cracker pr
 
 We were on our way to lunch."
 }
-
+,
 {
 user_id: 4,
 create_at: 1269287118000,
@@ -233,7 +234,7 @@ How could this be? My family has no history of any form of Alzheimer's Disease. 
 I became angered, in denial and depressed at how my life would eventually turn out. Knowledge is the key to understanding this terrible disease and not giving up."
 }
 
-
+,
 {
 user_id: 4,
 create_at: 1269459918000,
@@ -257,7 +258,7 @@ Finally found all my clothes including the extra size panties and dressed.
 I grabbed my purse and ran out and looked the door. Then I realized I did not have my house keys. I looked down and guess where they were all the time? They were in the door knob where I unlocked the door earlier.
 Now do not get the wrong idea this is not forgetful, this is me and my dementia brain at work."
 }
-
+,
 
 {
 user_id: 4,
@@ -274,7 +275,7 @@ Shopping is a different matter, I may know I need the ingredients to make spaghe
 I realize that everyone forgets things from time to time but this every single day that you either misplace, forget or totally lose any train of thought. Imagine this each day of your life, you wonder if it's really dementia or should I become committed with padded walls and people running naked down the halls.
 Dementia is not a disease I would wish upon my worst enemy. Your memory is as if it's padlocked in a crate, you open one box and there's another box that it's locked again inside. This goes on until you get to the last small box that you imagine to hold your brain and when the last box is open all you find is a jack in the box, playing a silly tune that irritates you again."
 }
-
+,
 {
 user_id: 4,
 create_at: 1270496718000,
@@ -296,33 +297,34 @@ Paying Bills
 I have been late on paying bills simply because I forgot them or I didn't realize today was the day it was due. I have paid my share of late fees and reconnection fees, because of the short-term memory loss.
 This past Friday I didn't realize the water was past due until later during the day I cut the water on, it's turned off. Monday I will have to pay the bill plus the reconnection fee. Instead of thirty-eight dollars, I will now have to pay seventy-three dollars, this was my fault for not paying . How I wish I could find a better way to remember. All the bills are together, and it's written on two calendars. Still I miss paying the bill on the day it's due."
 }
-
+,
 {
 user_id: 5,
 create_at: 959040000
 content: "When I was in the middle of ironing, Alan removed the plug from the socket and said I was not to continue. When I told him that I had only a few more items to iron, he said that he wouldn't allow it.
 When I put the plug back in, he immediately took it out again. I didn't do this again, as I was a bit concerned that he may pick up the hot iron and burn me with it. He said that I knew I was in the wrong and asked why I didn't just admit it. He also mentioned that I had not paid to use the iron."
 }
-
+,
 {
 user_id: 5,
 create_at: 959731200,
 content: "Alan became very agitated prior to setting out for our appointment. He thought someone was going to murder him. When we were in the car he said that it was me who was going to murder him. I told him that I loved him and asked him why I should want to murder him. He said he didn't know but that was how he felt."
 }
-
+,
 {user_id: 5,
 create_at: 961113600,
 content: "Alan got up before me and I went back to sleep. However, I was awakened by a pillow being pressed firmly over my head. I said, 'Stop it Alan, you're smothering me.' He said, 'That's what I'm trying to do. You've stolen my credit cards.' I soon managed to free myself and helped him look for the missing cards.
 An hour later he was tearful and apologetic. However, later in the morning he was calling me 'scum' because he couldn't find his diary and assumed I had stolen it."
 }
-
+,
 {user_id: 5,
 create_at: 963187200,
 content: "Today was not a good day. Alan insisted that some folders I had in my hand were his and tried to grab them from me. He ended up pushing me, shoving me to the ground, slapping me and forcing me into the study. He then stood over me threateningly with his fingers digging into my arm. I made the mistake of biting his hand and he slapped me hard across the face twice.
 He then started shouting to non-existent people in the house. While he was distracted I managed to scramble into the loo and lock the door. He kept banging at the door trying to get in. After about 15 minutes when all seemed quiet outside I came out. He then treated me as though nothing had happened and wondered why I had been crying."
 }
-
+,
 {user_id: 5,
 create_at: 967766400,
 content: "Aricept was prescribed again. (It was originally prescribed in June but Alan hid the tablets from me)."
 }
+]
