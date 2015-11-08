@@ -24,6 +24,8 @@ class Story < ActiveRecord::Base
       'title' => title,
       'content' => content,
       'user_id' => user_id,
+      'votes' => votes,
+      'comments' => comments.count,
       'created_at' => created_at,
       'updated_at' => updated_at,
       # 'tags'=>"xyz"
