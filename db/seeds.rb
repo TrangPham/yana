@@ -9,6 +9,11 @@ User.delete_all
 Story.delete_all
 Comment.delete_all
 
+#Delete all ES entries
+`es_script/createIndex.sh`
+`es_script/participantMapping.sh`
+`es_script/entryMapping.sh`
+
 def persist_to_es(story)
   url = URI.parse('http://localhost:54321/api/entry')
   request = Net::HTTP::Post.new(url.request_uri)
@@ -20,13 +25,6 @@ def persist_to_es(story)
     puts 'Could not presist to Elastic Search DB.'
   end
 end
-
-#Delete all ES entries
-`es_script/createIndex.sh`
-`es_script/participantMapping.sh`
-`es_script/entryMapping.sh`
-
-
 
 tim = User.new(
   name: 'Timothy Cheung',
@@ -388,7 +386,7 @@ content: "Aricept was prescribed again. (It was originally prescribed in June bu
 )
 story_list << story
 Comment.create!(
-  user_id: story.user_id,
+  user_id: thu.id,
   story_id: story.id,
   created_at: 967766400,
   content: "Alan shouldn't have hid them from you. Does he not want you to get better? I think if the doctor prescribed, then you should heed his medical advise. I wish you the best :)"
