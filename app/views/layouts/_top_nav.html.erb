@@ -17,9 +17,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/stories/new">Write a story <span class="sr-only">(current)</span></a></li>
-        <li><a href="/explore">Explore Stories</a></li>
-        <li><a href="#">My Stories</a></li>
+        <% if user_signed_in? %>
+
+          <li class="active"><a href="/stories/new">Write a story <span class="sr-only">(current)</span></a></li>
+          <li><a href="/explore">Explore Stories</a></li>
+          <li><a href="#">My Stories</a></li>
+
+        <% else %>
+
+          <li><a href='#'>Register</a></li>
+          <li><a hred='#'>Login</a></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
