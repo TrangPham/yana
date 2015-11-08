@@ -101,6 +101,7 @@ app.post('/api/entry', function(req, res) {
     body: payload
   };
 
+
   request(options, function(err, response, data) {
     res.statusCode = 200;
     res.json({});
@@ -160,6 +161,8 @@ app.get('/api/trend', function(req, res) {
   };
 
   body = {
+    sort: [ { votes: { order: "desc" }}] ,
+    size: 99,
     query: {
       match_all: {}
     }
@@ -203,6 +206,8 @@ app.get('/api/search', function(req, res) {
 
 
   var body = {
+    sort: [ { votes: { order: "desc" }}] ,
+    size: 99,
     query: {
       bool: {
         should: [
@@ -231,6 +236,8 @@ app.get('/api/search', function(req, res) {
       }
     }
   };
+
+  console.log('search', JSON.stringify(body));
 
   var options = {
     uri: 'http://localhost:9200/yana/entry/_search',

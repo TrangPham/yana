@@ -25,8 +25,11 @@
 
 <script>
 
+var get_search;
+
 function test(val) {
   // console.log('test', val);
+  get_search(val);
 
   console.log('val ', val);
   $('#search-query').val(val + ' ');
@@ -36,7 +39,7 @@ function test(val) {
 
 $(document).ready(function() {
 
-  var get_search = function(q) {
+  get_search = function(q) {
     $.get('http://localhost:54321/api/search?q='+q, function(data, status) {
       console.log(data);
 
@@ -128,7 +131,7 @@ $(document).ready(function() {
 
 
   $('#search-query').on('keyup change paste', function() {
-    console.log('hello key pressed', $('#search-query').val());
+    // console.log('hello key pressed', $('#search-query').val());
 
     var q = $('#search-query').val();
 
