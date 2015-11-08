@@ -17,6 +17,11 @@ def persist_to_es(story)
 end
 
 #Delete all ES entries
+`es_script/createIndex.sh`
+`es_script/participantMapping.sh`
+`es_script/entryMapping.sh`
+
+
 
 tim = User.new(
   name: 'Timothy Cheung',
