@@ -28,8 +28,9 @@ class StoriesController < ApplicationController
   end
 
   def destroy
+    story = Story.find(params[:id])
     if story.valid_user?(current_user)
-      Story.find(params[:id]).destory
+      story.destory
       render nothing: true, status: :ok
     else
       render json: { error: 'Unable to delete story.' }, status: :unprocessable_entity
