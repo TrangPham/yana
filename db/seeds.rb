@@ -147,7 +147,7 @@ story_list << Story.create!(
   user_id: michael.id,
   created_at: 859420800,
   votes: 5,
-  tags: "God, Holy, Bible, radio, discussion, children, elderly, keeping busy, independence, love, heartsoreness, openness",
+  tags: "god, Holy, bible, radio, discussion, children, elderly, keeping busy, independence, love, heartsoreness, openness",
   content: "Radio without Borders had an open discussion today on the relationship between children and elderly parents. This topic has kept me busy (seriously) for the past year. I have come so far that I say not only the children have to become independent from the parents, but also the parents from the children.
 
   For me this process was accompanied by much quiet heartsoreness and emotion
@@ -173,7 +173,7 @@ story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1311536718,
   title: "Not Alone",
-  tags: "prayer, God, Lord, church, assisted living",
+  tags: "prayer, god, lord, church, assisted living",
   content: "Often, I'd felt alone in my role as caregiver, but I knew I wasn't. People were praying. Week after week, month after month, I'd shared our deteriorating situation with my church and together we prayed. And prayed. And prayed. Until one day Mom had, of her own volition, decided it was time to move out of her house and into assisted living.
   Only the Lord could have changed her demented thought process to not only make this decision, but follow through on it.
   Yes, I helped her carry out all the tasks needed to find a residence of her choice, go through the leasing agreement, have a medical check-up, and plan the actual move. But it was God who kept her mind on track so she was able to move forward. My brother and I had no legal means to make decisions on Mom's behalf. Even in her demented state of mind, the law was clear.
@@ -185,7 +185,7 @@ story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1312055118,
   title: "Words From Joshua",
-  tags: "God, Bible, Lord",
+  tags: "god, bible, lord",
   content: "On this particular day, I was reading in Joshua Chapter 1, and found myself in tears.
   Joshua was addressing the tribes God had allowed to settle on the far side of the Jordan River, away from where the battles would take place as the Jewish Nation moved in and took possession of the Promised Land. Joshua said to the tribes,
   \"You are to help them until the Lord gives them rest, as he has done for you, and until they too have taken possession of the land the Lord your God is giving them. After that, you may go back and occupy your own land.
@@ -195,7 +195,7 @@ story_list << Story.create!(
 story_list << Story.create!(
   user_id: daniel.id,
   created_at: 1320090318,
-  tags: "prayer, Lord, God, mom, shocked, illusion, assisted care, court",
+  tags: "prayer, lord, god, mom, shocked, illusion, assisted care, court",
   content: "I have to admit, Lord, I'm still in a state of shock. It's hard to believe that after so many years supporting Mom to live independently in her own home, she's voluntarily made the move to a senior's residence.
 
 Dementia is a relentless master, though. Even Mom recognized that. I remember the day I was visiting her and she suddenly stood up and fumed, \"Someone needs to write this down. This is happening in other people's brains. You need to write about this.\"  That's when I realized my journaling was doing exactly what she'd demanded – that there be a record of this period in her life when her brain was betraying her.
