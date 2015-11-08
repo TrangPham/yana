@@ -6,12 +6,12 @@
   min-height: 600px;
   padding-left: 1em;
   float: left;
-  #story-title {
+  #title {
     float: left;
     display: block;
     width: 100%;
     text-align: left;
-    #title {
+    #story_title {
       width: 60%;
       font-size: 1.5em;
       border-radius: 5px;
@@ -20,7 +20,7 @@
     }
 
   }
-  #story-content {
+  #content {
     padding-top: 10px;
     float: left;
     display: block;
@@ -32,7 +32,7 @@
     //  margin-right: auto;
     //  text-align: left;
     }
-    #content {
+    #story_content {
       width: 90%;
       min-height: 500px;
       border-radius: 4px;
