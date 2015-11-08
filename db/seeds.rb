@@ -320,6 +320,8 @@ Now do not get the wrong idea this is not forgetful, this is me and my dementia 
 story_list << Story.create!(
 user_id: thu.id,
 created_at: 1270151118,
+votes: 3,
+tags: "annoyances, bother me, patience, damaged brain, forgotten",
 title:
 "Matters That Annoy You Now Diary of an Alzheimer's Patient",
 content: 
@@ -331,11 +333,14 @@ Does anyone think the coffee pot is sluggish in making their coffee? Seems as if
 Shopping is a different matter, I may know I need the ingredients to make spaghetti, it takes many trips down aisles just getting the sauce, noodles, cheese and hamburger meat. I go down an aisle for something and then remember that I forgot something four aisles over. Remembering what's needed is time-consuming and by the time you finally get out of the store you're exhausted and disgusted.
 I realize that everyone forgets things from time to time but this every single day that you either misplace, forget or totally lose any train of thought. Imagine this each day of your life, you wonder if it's really dementia or should I become committed with padded walls and people running naked down the halls.
 Dementia is not a disease I would wish upon my worst enemy. Your memory is as if it's padlocked in a crate, you open one box and there's another box that it's locked again inside. This goes on until you get to the last small box that you imagine to hold your brain and when the last box is open all you find is a jack in the box, playing a silly tune that irritates you again."
+
 )
 
 story_list << Story.create!(
 user_id: thu.id,
 created_at: 1270496718,
+votes: 1,
+tags: "trouble, days of the week, remember, annoyances, bother me, appointment"
 title:
 "What Day is Today?",
 content: 
@@ -365,11 +370,15 @@ When I put the plug back in, he immediately took it out again. I didn't do this 
 story_list << Story.create!(
 user_id: tom.id,
 created_at: 959731200,
+votes: 0,
+tags: "agitation, appointment, murder, love"
 content: "Alan became very agitated prior to setting out for our appointment. He thought someone was going to murder him. When we were in the car he said that it was me who was going to murder him. I told him that I loved him and asked him why I should want to murder him. He said he didn't know but that was how he felt."
 )
 
 story_list << Story.create!(user_id: tom.id,
 created_at: 961113600,
+votes: 2,
+tags: "smother, pillow, sleep, stolen, tearful, apologetic, diary"
 content: "Alan got up before me and I went back to sleep. However, I was awakened by a pillow being pressed firmly over my head. I said, 'Stop it Alan, you're smothering me.' He said, 'That's what I'm trying to do. You've stolen my credit cards.' I soon managed to free myself and helped him look for the missing cards.
 An hour later he was tearful and apologetic. However, later in the morning he was calling me 'scum' because he couldn't find his diary and assumed I had stolen it."
 )
