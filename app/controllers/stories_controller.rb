@@ -9,7 +9,7 @@ class StoriesController < ApplicationController
     story.user_id = current_user.id
     story.private = params[:private] == 'on'
     if story.save!
-      render json: { id: story.id }, status: :created
+      render json: { id: story.id, tags: story.tags }, status: :created
     else
       render json: { error: 'Unable to save story.' }, status: :unprocessable_entity
     end
