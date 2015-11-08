@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #left-container {
-  width: 100%;
+  width: 70%;
   min-height: 600px;
+  padding-left: 1em;
+  float: left;
   #title {
     float: left;
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     #story_title {
       width: 60%;
       font-size: 1.5em;
@@ -23,37 +25,31 @@
     float: left;
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     ul.wysihtml5-toolbar {
-      width: 777.4px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+    //  width: 777.4px;
+    //  margin-left: auto;
+    //  margin-right: auto;
+    //  text-align: left;
     }
     #story_content {
-      width: 60%;
-      min-height: 400px;
-      border-radius: 5px;
+      width: 90%;
+      min-height: 500px;
+      border-radius: 4px;
       border: none;
     }
   }
-  #submit-btn{
+  #submit-btn {
     float: left;
     text-align: center;
   }
 }
 #right-container {
-  z-index: 1000;
-  position: fixed;
-  right: 250px;
-  width: 0;
+  float: right;
+  margin-right: 2rem;
+  width: 25%;
   height: 100%;
-  margin-right: -250px;
   overflow-y: auto;
-  background: #abab97;
-  color: white;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  // background: #abab97;
+  color: #444;
 }
