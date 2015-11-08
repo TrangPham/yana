@@ -39,38 +39,23 @@ setTimeout(function() {
 
 
 
-///////////////////////////////////////////////////////////////////////////////
-// Elasticsearch
-///////////////////////////////////////////////////////////////////////////////
-
-/*
-var client = elasticsearch.Client({
-  host: 'localhost:9200'
-});
-
-client.create({
-  index: 'ctest',
-  type: 'typeTest',
-  // id: 'x',
-  body: {
-    title: 'hello world',
-    tags: ['tag1', 'tag2', 'tag3'],
-    text: 'The quick brown fox jumps over the lazy dog.'
-  }
-});
-*/
-
 
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // Server
 ///////////////////////////////////////////////////////////////////////////////
-var file = new(static.Server)('../client');
+var file = new(static.Server)('./');
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.post('/api/calais', function(req, res) {
   var name = req.body.name;
@@ -95,7 +80,7 @@ app.post('/api/dandelion', function(req, res) {
 });
 
 
-app.post('/api/alchemy/keywords', function(req, res) {
+app.post('/api/alchemy', function(req, res) {
   var name = req.body.name;
   var text = req.body.text;
 
@@ -106,6 +91,8 @@ app.post('/api/alchemy/keywords', function(req, res) {
   });
 });
 
+
+/*
 app.post('/api/alchemy', function(req, res) {
   var name = req.body.name;
   var text = req.body.text;
@@ -116,6 +103,7 @@ app.post('/api/alchemy', function(req, res) {
     res.json(alchemy.transformEntityResponse(JSON.parse(data)) );
   });
 });
+*/
 
 
 
