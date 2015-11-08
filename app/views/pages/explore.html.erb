@@ -7,12 +7,12 @@
     </div>
   <% end %>
 
+  <div id="search-total"></div>
+
 </div>
 
 <% if user_signed_in? %>
 
-  <div id="search-total">
-  </div>
 
   <div id="search-result">
   </div>
@@ -71,7 +71,7 @@ $(document).ready(function() {
       $('#search-total').empty();
 
       if (data.total > 0) {
-        $('#search-total').append('<br><br>Found <strong>' + data.total + '</strong> stories');
+        $('#search-total').append('<br>Found <strong>' + data.total + '</strong> stories');
       }
 
 

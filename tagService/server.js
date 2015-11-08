@@ -169,12 +169,12 @@ app.get('/api/trend', function(req, res) {
     console.log('search result:', data);
 
     res.statusCode = 200;
-    res.json(JSON.parse(data).hits);
-
+    if (data && JSON.parse(data).hits) {
+      res.json(JSON.parse(data).hits);
+    } else {
+      res.json({});
+    }
   });
-
-
-
 });
 
 
@@ -236,7 +236,11 @@ app.get('/api/search', function(req, res) {
     console.log('search result:', data);
 
     res.statusCode = 200;
-    res.json(JSON.parse(data).hits);
+    if (data && JSON.parse(data).hits) {
+      res.json(JSON.parse(data).hits);
+    } else {
+      res.json({});
+    }
 
   });
 
