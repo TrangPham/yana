@@ -1,4 +1,5 @@
 require 'net/http'
+require 'uri'
 
 class Story < ActiveRecord::Base
   belongs_to :user
@@ -7,7 +8,7 @@ class Story < ActiveRecord::Base
   before_create :set_created_at
   before_update :set_updated_at
 
-  before_save :presist_to_nosql
+  before_save :presist_to_es
 
   def valid_user?(user)
     user_id == user.id
@@ -31,11 +32,25 @@ class Story < ActiveRecord::Base
     self.updated_at = Time.now
   end
 
-  def presist_to_nosql
-    # http = Net::HTTP.new('localhost', '54321')
-    # request = Net::HTTP::Post.new('api/entry')
-    # request.add_field('Content-Type', 'application/json')
-    # request.body = {'credentials' => {'username' => 'username', 'key' => 'key'}}
-    # response = http.request(request)
+  def presist_to_es
+    url = URI.parse('http://localhost:54321/api/entry')
+    request = Net::HTTP::Post.new(url.request_uri)
+    http = Net::HTTP.new(url.host, url.port)
+
+    story = {
+      'title' => title,
+      'content' => content,
+      'user_id' => user_id,
+      'created_at' => created_at,
+      'updated_at' => updated_at,
+      # 'tags'=>"xyz"
+      'tags' => tags.split(',').map(&:strip)
+    }
+    request.set_form_data('payload' => story.to_json)
+
+    response = http.request(request)
+    if response.code != "200"
+      errors.add(:id, 'Could not presist to Elastic Search DB.')
+    end
   end
 end
