@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151107195549) do
     t.integer "created_at",                 null: false
     t.integer "updated_at",                 null: false
     t.boolean "private",    default: false
+    t.integer "vote",       default: 0
   end
 
   create_table "tags", force: :cascade do |t|
@@ -60,11 +61,5 @@ ActiveRecord::Schema.define(version: 20151107195549) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "votes", force: :cascade do |t|
-    t.integer "v_count"
-    t.integer "created_at", null: false
-    t.integer "updated_at", null: false
-  end
 
 end

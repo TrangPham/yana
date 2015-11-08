@@ -2,7 +2,6 @@ class Story < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :tags
-  has_one :vote
 
   before_create :set_created_at
   before_update :set_updated_at

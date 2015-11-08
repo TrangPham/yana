@@ -35,6 +35,11 @@ class StoriesController < ApplicationController
     end
   end
 
+  def vote
+    Story.find(params[:id]).vote
+    render nothing: true, status: :ok
+  end
+
   private
 
   def story_params
