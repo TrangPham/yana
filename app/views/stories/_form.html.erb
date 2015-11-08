@@ -41,15 +41,37 @@
           handle = window.setTimeout(function() {
             $.post('http://localhost:54321/api/calais', 'text=' + text, function(data, status) {
               console.log("ajax ", data.join(',') );
-              $('#story_tags').val(data.join(', ') ); 
 
               $('#story_tags_display').empty();
-              data.forEach(function(d) {
+
+              var tags = [];
+              tags = tags.concat(data);
+
+              var tokens = text.split(" ");
+              console.log('split', tokens);
+              tokens.forEach(function(t) {
+                if (t.startsWith('#')) {
+                  tags.push(t.substr(1));
+                }
+              });
+
+              // FIXME: lodash or underscore
+              var unique = [];
+              tags.forEach(function(d) {
+                if (unique.indexOf(d) === -1) {
+                  unique.push(d);
+                }
+              });
+
+
+              $('#story_tags').val(unique.join(', ') ); 
+              unique.forEach(function(d) {
                 $('#story_tags_display').append('<li>' + d + '</li>');
               });
 
+
             });
-          }, 2000);
+          }, 1200);
         }
       }
     });
