@@ -86,7 +86,7 @@
   </div>
   <div id="reg-box">
     <h2> Join us, It's never too late </h2>
-    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+    <%= form_for(:user, :url => registration_path(:user)) do |f| %>
       <div class="form-group">
         <%= f.email_field :email, class: 'form-control', placeholder: "person@example.com", required: true %>
       </div>

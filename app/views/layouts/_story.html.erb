@@ -1,6 +1,12 @@
 <div class='story'>
   <h2><%= story.title %></h2>
-  <p><%= story.content %></p>
+  <% if story.content.length > 250 %>
+    <%= truncate(story.content, length: 250) %>
+    <%= link_to 'Read more', story_path(story), class: "read-more-#{story.id}" %>
+  <% else %>
+    <p><%= story.content %></p>
+    <%= link_to 'Add Comment', story_path(story), class: "read-more-#{story.id}" %>
+  <% end %>
   <div>
     <i class="fa fa-heart"></i> <%= story.votes %>  
     <i class="fa fa-comments"></i> <%= story.comments.count %>

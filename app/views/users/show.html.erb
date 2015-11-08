@@ -1,17 +1,19 @@
 <% if user_signed_in? %>
   <h1><%= @user.name %></h1>
   <p><%= @user.bio %></p>
-  <% if @stories.empty? %>
-    <% if @user.id == current_user %>
-      <p>You have no stories. <a href='/stories/new'>Write a story?</a></p>
+  <div id="my-story-container">
+    <% if @stories.empty? %>
+      <% if @user.id == current_user %>
+        <p>You have no stories. <a href='/stories/new'>Write a story?</a></p>
+      <% else %>
+        <p><%= @user.name %> has no public stories.</p>
+      <% end %>
     <% else %>
-      <p><%= @user.name %> has no public stories.</p>
+      <% @stories.each do |story| %>
+        <%= render partial: 'layouts/story', locals: {story: story} %>
+      <% end %>
     <% end %>
-  <% else %>
-    <% @stories.each do |story| %>
-      <%= render partial: 'layouts/story', locals: {story: story} %>
-    <% end %>
-  <% end %>
+  </div>
 <% else %>
-<p> You must be signed in to view stories </p>
+  <p> You must be signed in to view stories </p>
 <% end %>

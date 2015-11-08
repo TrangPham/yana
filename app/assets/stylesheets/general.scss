@@ -8,7 +8,7 @@ body {
   #topbar-logo {
     height: 50px;
   }
-  margin-left: -40px;
+  margin-left: -38px;
   margin-top: -10px;
 }
 p.navbar-text {
@@ -17,12 +17,6 @@ p.navbar-text {
   font-size: 15px;
   padding: 9px 0 4px 0;
   margin-left: -10px;
-}
-#searchbox-bar {
-  text-align: center;
-  margin-left: 100px;
-  display: block; 
-  float: left;
 }
 .share-style {
   font-weight: bold;
@@ -116,4 +110,25 @@ p.navbar-text {
       width: auto;
     }
   }
+}
+
+#search-box {
+  text-align: center;
+  margin-left: 120px;
+  margin-right: auto;
+  display: block; 
+  float: left;
+  width: 80%;
+}
+#story-list {
+  float: left;
+  margin: 50px;
+}
+.story {
+  background: white;
+  width: 400px;
+  padding: 10px 15px;
+  display: block;
+  float: left;
+  margin: 5px;
 }
