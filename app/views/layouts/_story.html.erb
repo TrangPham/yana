@@ -1,5 +1,5 @@
 <div class='story'>
-  <h2><%= story.title %></h2>
+  <h3><%= story.title %></h3>
   <% if story.content.length > 250 %>
     <%= truncate(story.content, length: 250) %>
     <%= link_to 'Read more', story_path(story), class: "read-more-#{story.id}" %>

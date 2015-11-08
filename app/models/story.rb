@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
   before_create :set_created_at
   before_update :set_updated_at
 
-  before_save :persist_to_es
+  after_save :persist_to_es
 
   def valid_user?(user)
     user_id == user.id
@@ -20,6 +20,7 @@ class Story < ActiveRecord::Base
 
   def to_json
     {
+      'id' => id,
       'title' => title,
       'content' => content,
       'user_id' => user_id,
