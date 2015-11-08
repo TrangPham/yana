@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get 'explore' => 'pages#explore'
 
+  get 'mystories' => 'pages#profile'
+
   # Example resource route with options:
   #   resources :products do
   #     member do
