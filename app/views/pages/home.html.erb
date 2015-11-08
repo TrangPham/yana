@@ -1,4 +1,5 @@
 <div id="home-container">
+<div id="container">
 <section id="grid" class="grid discovery clearfix">
   <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
     <figure>
@@ -45,10 +46,14 @@
     </figure>
   </a>
 </section>
+</div>
 <hr>
-<section id="lost" >
+<section id="problem" >
   <div id="text-left"> 
-    <span class="main-text"></span>
+    <h3>More Than Just an Illness</h3>
+    <span class="main-text">
+      Currently, technology for people with dementia are focused on treating symptoms, thus reducing them to their illness. YANA believes you are more than your illness, nor do you have to face your challenges alone.
+    </span>
   </div>
   <div id="pic-right"> 
     <img src="<%=image_path('') %>"/>
@@ -56,7 +61,10 @@
 </section>
 <section id="leap" >
   <div id="text-right"> 
-    <span class="main-text"></span>
+    <h3>Person Centered</h3>
+    <span class="main-text">
+    A ​"person-centered" platform for people affected by dementia to share their experiences, their hobbies, and their interests amongst each other through their stories.
+  </span>
   </div>
   <div id="pic-left"> 
     <img src="<%=image_path('') %>"/>
@@ -70,12 +78,30 @@
     <img src="<%=image_path('') %>"/>
   </div>
 </section>
-<section id="journey" >
-  <div id="text-right"> 
-    <span class="main-text"></span>
+<section id="register" >
+  <div id="reg-pic">
+    <img src="<%= image_path('itsnottoolate.gif') %>"/>
   </div>
-  <div id="pic-left"> 
-    <img src="<%=image_path('') %>"/>
+  <div id="reg-box">
+    <h2> Join Us, It's never too late </h2>
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: "person@example.com", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :name, class: 'form-control', placeholder: "Full Name (if blank it will be saved as anonymous)", required: true%>
+      </div>
+      <div class="p-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: "Password (Minimum 6 letters)", required: true %>
+      </div>
+      <div class="p-group">
+        <%= f.password_field :password_confirmation , class: 'form-control', placeholder: "Password Confirmation", required: true %>
+      </div>
+      <div class="select-group">
+        <%= f.select(:category, [['Patient', 'patient'], ['Caregiver', 'caregiver']]) %>
+      </div>
+      <%= f.submit :submit %>
+    <% end %>
   </div>
 </section>
 <section id="team" >

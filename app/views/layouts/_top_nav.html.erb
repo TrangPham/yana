@@ -11,9 +11,16 @@
       <a class="navbar-brand" href="/">
       <img id="topbar-logo" src="<%=image_path('yana_logo.png') %>"> </img>
       </a>
-      <p class="navbar-text">You Are Not Alone, share your story</p>
+      <p class="navbar-text">You Are Not Alone,<br> <span class="share-style">Share your story</span></p>
     </div>
-
+    <div id="searchbox-bar" class="collapse navbar-collapse">
+      <%= form_tag "#", method:"get", class:"navbar-form navbar-left" do %>
+        <div class= "form-group inner-addon right-addon">
+          <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search", type:"text" %>
+          <%= hidden_field_tag :search_value, id: "searchedValue" %>
+        </div>
+      <% end %>
+    </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">

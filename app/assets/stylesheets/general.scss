@@ -6,10 +6,27 @@ body {
 }
 .navbar > .container-fluid .navbar-brand {
   #topbar-logo {
-    height: 54px;
+    height: 50px;
   }
-  margin-left: -45px;
-  margin-top: -15px;
+  margin-left: -40px;
+  margin-top: -10px;
+}
+p.navbar-text {
+  display: block;
+  float: left;
+  font-size: 15px;
+  padding: 9px 0 4px 0;
+  margin-left: -10px;
+}
+#searchbox-bar {
+  text-align: center;
+  margin-left: 100px;
+  display: block; 
+  float: left;
+}
+.share-style {
+  font-weight: bold;
+  font-size: 17px;
 }
 .discovery {
   height: 400px;
@@ -22,4 +39,33 @@ body {
  
 .clearfix:after {
   clear: both;
+}
+
+#reg-box{
+  float:right;
+  width: 60%;
+  background: white;
+  padding: 20px 40px 20px 10px;
+  .p-group {
+    width: 49%;
+    display: inline-block;
+  }
+  .form-group {
+    width: 98.5%;
+  }
+  .select-group {
+    padding: 15px 0;
+  }
+}
+#reg-pic {
+  float:left;
+  width: 40%;
+  img {
+    width: 500px;
+  }
+}
+#register {
+  width: 100%;
+  height: 400px;
+  background: white;
 }

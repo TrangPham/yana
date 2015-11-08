@@ -1,6 +1,26 @@
 <div id="left-container">
-  <%= render 'stories/form' %>
+  <form#story-form accept-charset="UTF-8" action="/stories" method="post" data-remote="true">
+    <input name="authenticity_token" value="#{form_authenticity_token}" type="hidden">
+    <input class="user_id" name="user_id" type="hidden">
+    <div id="title">
+      <input id="story_title" type="text" placeholder= 'Make this cooler by writing a title' >
+    </div>
+
+    <div id="content">
+        <textarea id="story_content" class="story-content" placeholder='Write your stories here' required= true>
+        </textarea>
+    </div>
+    <div id="submit-btn">
+        <input class="btn btn-default" type="submit" name="Save">
+    </div>
+    <input id="story_tags" type="hidden"/>
+
+    <span id="story_tags_display">
+    </span>
+
+  </form> 
 </div>
+<<<<<<< Updated upstream
 <div id="right-container"> 
   <h3>Tags</h3>
   <ol id="story_tags_display">
@@ -16,3 +36,8 @@
   </ul>
   -->
 </div>
+=======
+<div id="right-container">
+  hello
+</div>
+>>>>>>> Stashed changes
