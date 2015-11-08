@@ -1,13 +1,14 @@
 <% if user_signed_in? %>
   <div id="search-box">
     <div id="search-popular"></div>
-    <%= form_tag "#", method:"get" do %>
-      <div>
-        <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
-        <%= hidden_field_tag :search_value, id: "searchedValue" %>
-      </div>
-    <% end %>
-
+    <div id="search-bar">
+      <%= form_tag "#", method:"get" do %>
+        <div>
+          <%= text_field_tag :search, params[:search], class:"form-control search-box", id:"search-query", placeholder: "Search...", type:"text" %>
+          <%= hidden_field_tag :search_value, id: "searchedValue" %>
+        </div>
+      <% end %>
+    </div>
     <div id="search-total"></div>
 
   </div>
@@ -28,23 +29,34 @@
 $(document).ready(function() {
 
 
+  var story = function(d) {
+    var title = d._source.title || '';
+    var content = d._source.content || '';
+    var story_id = d._source.id || '';
+    var votes = d._source.votes || '0';
+    var comments = d._source.comments || '0';
+
+    var story = '<div class="story"><h3>' + title + '</h3><p>';
+    if(content.length > 250) {
+      story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+    } else {
+      story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+    }
+    // The votes and comments
+    story += '<div><i class="fa fa-heart"></i> ' + votes +  ' <i class="fa fa-comments"></i> ' + comments + '</div>'
+
+    story += '</div>';
+
+    return story;
+  }
+
   // Get trend information ?
   $.get('http://localhost:54321/api/trend', function(data, status) {
+    $('#search-trend').append('<div id="exp-story-container">');
     data.hits.forEach(function(d) {
-      var title = d._source.title || '';
-      var content = d._source.content || '';
-      var story_id = d._source.id || '';
-
-      var story = '<div class="story"><h3>' + title + '</h3><p>';
-      if(content.length > 250) {
-        story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
-      } else {
-        story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
-      }
-      story += '</div>';
-
-      $('#search-trend').append(story);
+      $('#exp-story-container').append(story(d));
     });
+    $('#search-trend').append('</div>');
   });
 
   var popularTags = [];
@@ -77,26 +89,13 @@ $(document).ready(function() {
       $('#search-trend').empty();
       $('#search-total').empty();
 
-      if (data.total > 0) {
-        $('#search-total').append('<br>Found <strong>' + data.total + '</strong> stories');
-      }
+      $('#search-total').append('<br>Found <strong>' + data.total + '</strong> stories');
 
-
+      $('#search-result').append('<div id="exp-story-container">');
       data.hits.forEach(function(d) {
-        var title = d._source.title || '';
-        var content = d._source.content || '';
-        var story_id = d._source.id || '';
-
-        var story = '<div class="story"><h3>' + title + '</h3><p>';
-        if(content.length > 250) {
-          story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
-        } else {
-          story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
-        }
-        story += '</div>';
-
-        $('#search-result').append(story);
+        $('#exp-story-container').append(story(d));
       });
+      $('#search-result').append('</div>');
 
     });
   });

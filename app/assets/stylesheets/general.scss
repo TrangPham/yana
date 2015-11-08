@@ -126,12 +126,15 @@ p.navbar-text {
 }
 .story {
   background: white;
-  width: 400px;
+  width: 340px;
   padding: 10px 15px;
-  display: block;
-  float: left;
-  margin: 5px;
-  min-height: 250px;
+  display: inline-block;
+  margin: 8px;
+  vertical-align: top;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(135,132,135,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(135,132,135,1);
+  box-shadow: 2px 2px 5px 0px rgba(135,132,135,1);
+  border-radius: 2px;
 }
 #read_story, .comment {
   background: white;
