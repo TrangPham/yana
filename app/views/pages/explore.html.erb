@@ -33,8 +33,17 @@ $(document).ready(function() {
     data.hits.forEach(function(d) {
       var title = d._source.title || '';
       var content = d._source.content || '';
+      var story_id = d._source.id || '';
 
-      $('#search-trend').append('<div class="story"><h2>' + title + '</h2><p>' + content + '</p></div><br><hr>');
+      var story = '<div class="story"><h3>' + title + '</h3><p>';
+      if(content.length > 250) {
+        story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+      } else {
+        story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+      }
+      story += '</div>';
+
+      $('#search-trend').append(story);
     });
   });
 
@@ -76,8 +85,17 @@ $(document).ready(function() {
       data.hits.forEach(function(d) {
         var title = d._source.title || '';
         var content = d._source.content || '';
+        var story_id = d._source.id || '';
 
-        $('#search-result').append('<div class="story"><h2>' + title + '</h2><p>' + content + '</p></div><br><hr>');
+        var story = '<div class="story"><h3>' + title + '</h3><p>';
+        if(content.length > 250) {
+          story += content.substring(0, 250) + '... <a class="read-more" href="/stories/' + story_id + '">Read more</a></p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+        } else {
+          story += content + '</p><a class="read-more" href="/stories/' + story_id + '">Add Comment</a>';
+        }
+        story += '</div>';
+
+        $('#search-result').append(story);
       });
 
     });

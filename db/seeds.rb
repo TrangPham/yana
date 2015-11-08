@@ -4,6 +4,11 @@
 require 'net/http'
 require 'uri'
 
+#Delete the entries in database
+User.delete_all
+Story.delete_all
+Comment.delete_all
+
 def persist_to_es(story)
   url = URI.parse('http://localhost:54321/api/entry')
   request = Net::HTTP::Post.new(url.request_uri)
@@ -74,6 +79,7 @@ story_list = []
 story_list << Story.create!(
   user_id: tim.id,
   created_at: 1296864000,
+  tags: "gender studies, hope, journal",
   private: true,
   content:
   "During my going-away meeting with Gender Studies, the faculty gave me this

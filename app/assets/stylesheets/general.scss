@@ -131,8 +131,9 @@ p.navbar-text {
   display: block;
   float: left;
   margin: 5px;
+  min-height: 250px;
 }
-#read_story {
+#read_story, .comment {
   background: white;
   width: 80%;
   padding: 10px 15px;
