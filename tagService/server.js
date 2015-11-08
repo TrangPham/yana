@@ -106,6 +106,7 @@ app.post('/api/entry', function(req, res) {
   request(options, function(err, response, data) {
     console.log('ES', data);
     res.statusCode = 200;
+    res.json({});
   });
 
 });
