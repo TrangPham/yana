@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
   before_create :set_created_at
   before_update :set_updated_at
 
-  after_save :persist_to_es
+  after_save :persist_to_es, unless: private
 
   def valid_user?(user)
     user_id == user.id

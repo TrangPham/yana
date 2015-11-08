@@ -2,17 +2,44 @@
   <h3><%= story.title %></h3>
   <b>Written by <%= story.user.category %> <%= story.user.name %></b>
   <p><%= story.content %></p>
-  <a href="#add-comment">Add Comment</a>
   <div>
     <i class="fa fa-heart"></i> <%= story.votes %>  
     <i class="fa fa-comments"></i> <%= story.comments.count %>
   </div>
 </div>
-<div id="story_comments">
-  <% story.comments.each do |comment| %>
-    <div class="comment">
-      <p><%= comment.user.name %> said:</p>
-      <p><%= comment.content %></p>
-    </div>
-  <% end %>
+<div id="story-comments">
+  <div id="comment-list">
+    <% if story.comments.blank? %>
+      <span id="no-comments"> No Comments Yet </span>
+    <% else %>
+      <% story.comments.each do |comment| %>
+        <div class="comment">
+          <p><%= comment.user.name %> said:</p>
+          <p><%= comment.content %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="comment-box">
+    <h4> Add Comments </h4>
+    <form id="comment-form" accept-charset="UTF-8" action="/comments" method="post" data-remote="true">
+      <input name="authenticity_token" value="#{form_authenticity_token}" type="hidden">
+      <input class="story_id" name="story_id" type="hidden" value="<%= story.id %>">
+      <div id="content">
+          <textarea id="comment_content" class="comment-content" name="content" placeholder='Write your stories here'>
+          </textarea>
+      </div>
+      <div id="submit-btn">
+          <input class="btn btn-default" type="submit" name="Save">
+      </div>
+    </form> 
+  </div>
 </div>
+<script type="text/javascript">
+  var handle;
+
+  $(document).ready(function(){
+    $('#comment_content').wysihtml5();
+  });
+
+</script>

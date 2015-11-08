@@ -22,9 +22,8 @@ Rails.application.routes.draw do
     member do
       post 'vote'
     end
-    resources :comments
   end
-
+  resources :comments
   post 'stories/search' => 'search#search'
 
   get 'explore' => 'pages#explore'

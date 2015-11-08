@@ -136,15 +136,17 @@ p.navbar-text {
   box-shadow: 2px 2px 5px 0px rgba(135,132,135,1);
   border-radius: 2px;
 }
+#read_story {
+  margin: 5px 20px;
+  float: left;
+}
 #read_story, .comment {
   background: white;
   width: 80%;
   padding: 10px 15px;
   display: block;
   float: left;
-  margin: 5px;
-}
-.pill {
+}.pill {
   background: #369;
   color: #ddd;
   border-radius: 4px;
