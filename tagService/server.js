@@ -95,8 +95,6 @@ app.post('/api/alchemy', function(req, res) {
 app.post('/api/entry', function(req, res) {
 
   var payload = req.body.payload;
-  console.log('body', payload);
-
   var options = {
     uri: 'http://localhost:9200/yana/entry',
     method: 'POST',
@@ -104,7 +102,6 @@ app.post('/api/entry', function(req, res) {
   };
 
   request(options, function(err, response, data) {
-    console.log('ES', data);
     res.statusCode = 200;
     res.json({});
   });
@@ -132,7 +129,7 @@ app.get('/api/trend-tags', function(req, res) {
   };
 
   request(options, function(err, response, data) {
-    console.log('search result:', data);
+    // console.log('search result:', data);
 
     res.statusCode = 200;
     if (data && JSON.parse(data).aggregations) {
@@ -142,8 +139,6 @@ app.get('/api/trend-tags', function(req, res) {
     }
 
   });
-
-
 });
 
 app.get('/api/trend', function(req, res) {
@@ -177,7 +172,7 @@ app.get('/api/trend', function(req, res) {
   };
 
   request(options, function(err, response, data) {
-    console.log('search result:', data);
+    // console.log('search result:', data);
 
     res.statusCode = 200;
     if (data && JSON.parse(data).hits) {
@@ -190,12 +185,12 @@ app.get('/api/trend', function(req, res) {
 
 
 app.get('/api/search', function(req, res) {
-  console.log('Q ', req.query.q);
+  // console.log('Q ', req.query.q);
 
   var qstr = req.query.q;
   var qlist = qstr.split(' ');
 
-  console.log('Q2', qlist);
+  // console.log('Q2', qlist);
 
   var tagQueryList = [];
   qlist.forEach(function(d) {
@@ -244,7 +239,7 @@ app.get('/api/search', function(req, res) {
   };
 
   request(options, function(err, response, data) {
-    console.log('search result:', data);
+    // console.log('search result:', data);
 
     res.statusCode = 200;
     if (data && JSON.parse(data).hits) {

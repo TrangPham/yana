@@ -44,9 +44,10 @@ module.exports = function() {
       if (v.hasOwnProperty('_typeGroup') && v._typeGroup === 'topics') {
         result.push( v.name );
       }
+      /*
       if (v.hasOwnProperty('_typeGroup') && v._typeGroup === 'socialTag') {
         result.push( v.name );
-      }
+      }*/
     })
     return transformer.normalize(result);
   }
