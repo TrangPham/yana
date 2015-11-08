@@ -47,8 +47,7 @@
   </a>
 </section>
 </div>
-<hr>
-<section id="problem" >
+<section id="problem" class="desc-box" >
   <div id="text-left"> 
     <h3>More Than Just an Illness</h3>
     <span class="main-text">
@@ -56,34 +55,37 @@
     </span>
   </div>
   <div id="pic-right"> 
-    <img src="<%=image_path('') %>"/>
+    <img src="<%=image_path('together.png') %>"/>
   </div>
 </section>
-<section id="leap" >
+<section id="what" class="desc-box" >
   <div id="text-right"> 
     <h3>Person Centered</h3>
     <span class="main-text">
-    A ​"person-centered" platform for people affected by dementia to share their experiences, their hobbies, and their interests amongst each other through their stories.
+    A ​<span class="highlight">Person-centered"</span> platform for people affected by dementia to share their experiences, their hobbies, and their interests amongst each other through their stories.
   </span>
   </div>
   <div id="pic-left"> 
-    <img src="<%=image_path('') %>"/>
+    <img src="<%=image_path('journey.png') %>"/>
   </div>
 </section>
-<section id="getting-back" >
+<section id="why" class="desc-box">
   <div id="text-left"> 
-    <span class="main-text"></span>
+    <h3> How YANA Can Help</h3>
+    <span class="main-text">
+      People who have high sustained levels of social engagement are 58% less likely as those with low social engagement to develop dementia. That means those who have been diagnosed with or are at risk of dementia will benefit from sharing their stories with a community, and YANA is a great place to start.
+    </span>
   </div>
   <div id="pic-right"> 
-    <img src="<%=image_path('') %>"/>
+    <img src="<%=image_path('share.png') %>"/>
   </div>
 </section>
-<section id="register" >
+<section id="register">
   <div id="reg-pic">
     <img src="<%= image_path('itsnottoolate.gif') %>"/>
   </div>
   <div id="reg-box">
-    <h2> Join Us, It's never too late </h2>
+    <h2> Join us, It's never too late </h2>
     <%= form_for(:user, :url => session_path(:user)) do |f| %>
       <div class="form-group">
         <%= f.email_field :email, class: 'form-control', placeholder: "person@example.com", required: true %>
