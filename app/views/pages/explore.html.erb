@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+<% @stories.each do |story| %>
+  <h2><%= story.title %></h2>
+  <p><%= story.content %></p>
+<% end %>
+<% else %>
+<p> You must be signed in to view stories </p>
+<% end %>

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   post 'stories/search' => 'search#search'
 
-  get 'explore' => 'explore#index'
+  get 'explore' => 'pages#explore'
 
   # Example resource route with options:
   #   resources :products do
