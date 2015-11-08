@@ -18,6 +18,10 @@
   <div id="search-result">
   </div>
 
+  <div id="search-trend">
+  </div>
+
+
 <% else %>
 <p> You must be signed in to view stories </p>
 <% end %>
@@ -25,6 +29,17 @@
 <script>
 
 $(document).ready(function() {
+
+
+  // Get trend information ?
+  $.get('http://localhost:54321/api/trend', function(data, status) {
+    data.forEach(function(d) {
+      var title = d._source.title || '';
+      var content = d._source.content || '';
+
+      $('#search-trend').append('<div class="story"><h2>' + title + '</h2><p>' + content + '</p></div><br><hr>');
+    });
+  });
 
   $('#search-query').on('keyup', function() {
     console.log('hello key pressed', $('#search-query').val());
@@ -40,6 +55,8 @@ $(document).ready(function() {
       console.log(data);
 
       $('#search-result').empty();
+      $('#search-trend').empty();
+
       data.forEach(function(d) {
         var title = d._source.title || '';
         var content = d._source.content || '';

@@ -112,6 +112,44 @@ app.post('/api/entry', function(req, res) {
 });
 
 
+
+app.get('/api/trend', function(req, res) {
+
+  // last 5 days
+  var t = (new Date()).getTime() - (5 * 24 * 60 * 60 * 1000);
+  t /= 1000;
+
+  var str = new Date(t);
+
+  var body = {
+    query: {
+        range: {
+          created_at : {
+            gte: str 
+          }
+        }
+    }
+  };
+
+  var options = {
+    uri: 'http://localhost:9200/yana/entry/_search',
+    method: 'GET',
+    body: JSON.stringify(body)
+  };
+
+  request(options, function(err, response, data) {
+    console.log('search result:', data);
+
+    res.statusCode = 200;
+    res.json(JSON.parse(data).hits.hits);
+
+  });
+
+
+
+});
+
+
 app.get('/api/search', function(req, res) {
   console.log('Q ', req.query.q);
 
