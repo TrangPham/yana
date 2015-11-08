@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    story = Story.new(entry_params)
+    story = Story.new(story_params)
     story.user_id = current_user.id
     if story.save!
       render json: { id: story.id }, status: :created
@@ -20,7 +20,7 @@ class StoriesController < ApplicationController
 
   def update
     story = Story.find(params[:id])
-    if story.valid_user?(current_user) && story.update!(entry_params)
+    if story.valid_user?(current_user) && story.update!(story_params)
       render nothing: true, status: :ok
     else
       render json: { error: 'Unable to update story.' }, status: :unprocessable_entity
@@ -44,8 +44,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    story = params.require(:story)
-    story.require(:content)
-    story.permit(:tags, :title, :private)
+    params.permit(:tags, :title, :private, :content)
   end
 end
