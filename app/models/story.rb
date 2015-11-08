@@ -6,11 +6,15 @@ class Story < ActiveRecord::Base
   before_create :set_created_at
   before_update :set_updated_at
 
-  private
-
   def valid_user?(user)
     user_id == user.id
   end
+
+  def vote
+    self.vote = vote + 1
+  end
+
+  private
 
   def set_created_at
     return unless created_at.blank?
