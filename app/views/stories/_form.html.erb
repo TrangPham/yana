@@ -5,20 +5,49 @@
   <div id="title">
     <input id="story_title" type="text" placeholder= 'Make this cooler by writing a title' >
   </div>
+
   <div id="content">
-    <textarea id="story_content" class="wysihtml5 story-content" placeholder='Write your stories here' required= true>
-    </textarea>
+      <textarea id="story_content" class="story-content" placeholder='Write your stories here' required= true>
+      </textarea>
   </div>
   <div id="submit-btn">
-    <input class="btn btn-default" type="submit" name="Save">
+      <input class="btn btn-default" type="submit" name="Save">
   </div>
+  <input id="story_tags" type="hidden"/>
+
+  <span id="story_tags_display">
+  </span>
+
 </form> 
 <script type="text/javascript">
+  var handle;
+
   $(document).ready(function(){
 
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
 
-  })
+    $('#story_content').wysihtml5({
+      'events': {
+        "newword:composer": function() {
+
+          var rawText = $('#story_content').val();
+          var text = rawText.replace(/(<([^>]+)>)/ig,"").replace(/\&nbsp\;/g, "");
+
+          window.clearTimeout(handle);
+          handle = window.setTimeout(function() {
+            $.post('http://localhost:54321/api/calais', 'text=' + text, function(data, status) {
+              console.log("ajax ", data.join(',') );
+
+              $('#story_tags').val(data.join(',') ); 
+              $('#story_tags_display').text(data.join(',') ); 
+            });
+
+          }, 2000);
+        }
+      }
+    });
+  });
+
+  function getTags(txt) {
+  }
+
 </script>
